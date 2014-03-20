@@ -1,0 +1,78 @@
+body{
+margin:0;
+overflow: hidden;
+}
+#header{
+top:0;
+width:100%;
+border:0;
+height:30px;
+}
+#cssmenu ul{
+margin:0;
+padding:0;
+list-style-type:none;
+width:auto;
+position:relative;
+display:block;
+height:30px;
+font-size:12px;
+font-weight:bold;
+background:transparent url(images/nav_bg.png) repeat-x top left;
+font-family:Arial, Helvetica,sans-serif;
+border-bottom:1px solid #000000;
+border-top:1px solid #000000;
+}
+#cssmenu li{
+display:block;
+float:left;
+margin:0;
+padding:0;
+}
+#cssmenu li a{
+display:block;
+float:left;
+color:#999999;
+text-decoration:none;
+font-weight:bold;
+padding:8px 20px 0 20px;
+}
+#cssmenu li a:hover{
+color:#FFFFFF;
+height:22px;
+background:transparent url(images/nav_bg.png) 0px -30px no-repeat;
+}
+#info{
+background-color: #344152;
+overflow: auto;
+position: relative;
+top: 0;
+left: 0;
+border: 0;
+height: 100%;
+width: 100%;
+}
+.bubble{
+    background-color: #c1c1c1;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 6px #16c9c9;
+    height: 150px;
+    margin: 20px;
+}
+#botbar{
+position:absolute;
+bottom:0;
+width:100%;
+border:0;
+height:30px;
+background:transparent url(images/nav_bg.png) repeat-x top left;
+}
+a{
+	color:blue;
+}
+a:visited{
+	color:red;
+}
