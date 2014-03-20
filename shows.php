@@ -21,7 +21,7 @@ $EXISTINGSHOWNAME = array();
 foreach($ROWS as $ROW) {
         $EXISTINGSHOWNAME[] = $ROW['showname'];
 }
-$RESULT1 = implode("i", "<a href='/Disk1/$EXISTINGSHOWNAME'>$EXISTINGSHOWNAME)"."</a>";
+$RESULT1 = implode("i", "<a href='/media/Disk1/$EXISTINGSHOWNAME'>$EXISTINGSHOWNAME)"."</a>";
 
 echo $RESULT1;
 mysqli_close($DBC);
