@@ -15,3 +15,5 @@
    <li><a href='#'><span>Other</span></a></li>
    <li><a href="settings.php"><span>Settings</span></a></li>
 </ul>
+</div>
+</div>
