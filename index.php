@@ -6,6 +6,8 @@ include 'header.php'; ?>
 <div class="bubble"></div>
 <div class="bubble">
 <div class="shows">
+<table>
+<tr>
 <?php
 //Build the connection to SQL server
 include '/media/dbinfo.php';
@@ -22,13 +24,15 @@ if($query_run=mysqli_query($DBC,$query))
     {
         $SHOWPATH = "./Disk1/".$rows['showname'];
 		$SHOW = $rows['showname'];
-		echo "<a href='$SHOWPATH'>$SHOW</a></br>";
+		echo "<td><a href='$SHOWPATH'>$SHOW</a></br></td>";
         $i=$i-1;
     }
 } else {
     echo'<font color="red"> Query does not run. </font>';
 }
 ?>
+</tr>
+</table>
 </div>
 </div>
 <div class="bubble"></div>
