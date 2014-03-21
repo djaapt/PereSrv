@@ -15,10 +15,10 @@ include '/media/dbinfo.php';
 //DB connection variable to call later
 $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
 
-$query="SELECT showname FROM $TABLE ORDER BY RAND() LIMIT 4";
+$query="SELECT showname FROM $TABLE ORDER BY RAND() LIMIT 10";
 if($query_run=mysqli_query($DBC,$query))
 {
-    $i=4;
+    $i=11;
     $rows=mysqli_fetch_array($query_run);
     while($rows=mysqli_fetch_array($query_run))
     {
