@@ -23,8 +23,9 @@ if($query_run=mysqli_query($DBC,$query))
     while($rows=mysqli_fetch_array($query_run))
     {
         $SHOWPATH = "./Disk1/".$rows['showname'];
+		$IMAGEPATH = "./Disk1/".rows['showname']/folder.jpg;
 		$SHOW = $rows['showname'];
-		echo "<td><a href='$SHOWPATH'>$SHOW</a></br></td>";
+		echo "<td><img src='$IMAGEPATH'><a href='$SHOWPATH'>$SHOW</a></td>";
         $i=$i-1;
     }
 } else {
