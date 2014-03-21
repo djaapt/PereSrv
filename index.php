@@ -6,7 +6,7 @@ include 'header.php'; ?>
 <div class="bubble"></div>
 <div class="bubble">
 <div class="shows">
-<table align="center" style="margin-left: 30px; margin-right: 30px; margin-top 10px;">
+<table align="center" style="margin-left: 30px; margin-right: 30px; margin-top 20px;">
 <tr>
 <?php
 //Build the connection to SQL server
