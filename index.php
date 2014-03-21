@@ -21,7 +21,8 @@ if($query_run=mysqli_query($DBC,$query))
     while($rows=mysqli_fetch_array($query_run))
     {
         $SHOWPATH = "./Disk1/".$rows['showname'];
-		echo "<a href='$SHOWPATH'>$rows['showname']</a></br>";
+		$SHOW = $rows['showname'];
+		echo "<a href='$SHOWPATH'>$SHOW</a></br>";
         $i=$i-1;
     }
 } else {
