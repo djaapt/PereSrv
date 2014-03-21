@@ -15,8 +15,8 @@ $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Databa
 $SHOWQUERY = "SELECT showname FROM $TABLE";
 $GETSHOW = mysqli_query($DBC,$SHOWQUERY);
 while($ROW = mysqli_fetch_array($GETSHOW)){
-$SHOWPATH = "./Disk1/".$ROW['showname'];
 $SHOW = $ROW['showname'];
+$SHOWPATH = "./Disk1/".$SHOW;
 echo "<a href='$SHOWPATH'>$SHOW</a></br>";
 }
 
