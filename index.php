@@ -4,7 +4,32 @@ include 'header.php'; ?>
 
 <div id="info">
 <div class="bubble"></div>
-<div class="bubble"></div>
+<div class="bubble">
+<div class="shows">
+<?php
+//Build the connection to SQL server
+include '/media/dbinfo.php';
+
+//DB connection variable to call later
+$DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
+
+$query="SELECT showname FROM $TABLE ORDER BY RAND() LIMIT 4";
+if($query_run=mysql_query($query))
+{
+    $i=4;
+    $rows=mysql_fetch_array($query_run);
+    while($rows=mysql_fetch_array($query_run))
+    {
+        echo $rows['showname'];
+        echo"</a>";
+        $i=$i-1;
+    }
+} else {
+    echo'<font color="red"> Query does not run. </font>';
+}
+?>
+</div>
+</div>
 <div class="bubble"></div>
 <div class="bubble"></div>
 
