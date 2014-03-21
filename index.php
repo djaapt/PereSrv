@@ -6,7 +6,7 @@ include 'header.php'; ?>
 <div class="bubble"></div>
 <div class="bubble">
 <div class="shows">
-<table align="center" style="margin-left: 25px; margin-right: 25px">
+<table align="center" style="margin-left: 30px; margin-right: 30px">
 <tr>
 <?php
 //Build the connection to SQL server
@@ -15,7 +15,7 @@ include '/media/dbinfo.php';
 //DB connection variable to call later
 $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
 
-$query="SELECT showname FROM $TABLE ORDER BY RAND() LIMIT 10";
+$query="SELECT showname FROM $TABLE ORDER BY RAND() LIMIT 11";
 if($query_run=mysqli_query($DBC,$query))
 {
     $i=11;
