@@ -17,8 +17,8 @@ $query="SELECT showname FROM $TABLE ORDER BY RAND() LIMIT 4";
 if($query_run=mysqli_query($DBC,$query))
 {
     $i=4;
-    $rows=mysql_fetch_array($query_run);
-    while($rows=mysql_fetch_array($query_run))
+    $rows=mysqli_fetch_array($query_run);
+    while($rows=mysqli_fetch_array($query_run))
     {
         echo $rows['showname'];
         echo"</a>";
