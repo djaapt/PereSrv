@@ -7,7 +7,7 @@ include 'header.php'; ?>
 <div class="bubble">
 <div class="shows">
 <table align="center" style="margin-left: 30px; margin-right: 30px;">
-<tr style="padding-top: 10px;">
+<tr>
 <?php
 //Build the connection to SQL server
 include '/media/dbinfo.php';
@@ -25,7 +25,7 @@ if($query_run=mysqli_query($DBC,$query))
         $SHOWPATH = "./Disk1/".$rows['showname'];
 		$IMAGEPATH = "$SHOWPATH/folder.jpg";
 		$SHOW = $rows['showname'];
-		echo "<td><img src='$IMAGEPATH' height=100><br><a href='$SHOWPATH'>$SHOW</a></td>";
+		echo "<td style="padding-top: 7px;"><img src='$IMAGEPATH' height=100><br><a href='$SHOWPATH'>$SHOW</a></td>";
         $i=$i-1;
     }
 } else {
