@@ -11,8 +11,8 @@ $EXCLUDE_LIST_PRINTABLE = implode(", ", $EXCLUDE_LIST);
 //Unwanted characters in query for later
 function clean_up( $TEXT ){
 	//Add any other characters to be removed inside the array
-	$UNWANTEDCHARS = array("'",);
-	return str_ireplace($UNWANTEDCHARS, '', $TEXT);
+	$FIXAPOSTROPHE = array("'",);
+	return str_ireplace($FIXAPOSTROPHE, '''', $TEXT);
 }
 
 //Set TV Show Directory 
