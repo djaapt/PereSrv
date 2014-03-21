@@ -17,7 +17,7 @@ $GETSHOW = mysqli_query($DBC,$SHOWQUERY);
 while($ROW = mysqli_fetch_array($GETSHOW)){
 $SHOW = $ROW['showname'];
 $SHOWPATH = "./Disk1/".$SHOW;
-echo '<a href="$SHOWPATH">$SHOW</a></br>';
+echo '<a href="'$SHOWPATH'">'$SHOW'</a></br>';
 }
 
 mysqli_close($DBC);
