@@ -12,24 +12,15 @@ include '/media/dbinfo.php';
 $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
 
 //Build query to check for duplicates already in the database
-$DUPQUERY = "SELECT showname FROM $TABLE";
-$DUPRESULT = mysqli_query($DBC,$DUPQUERY );
-while($ROW = mysqli_fetch_array($DUPRESULT)) {
-        $ROWS[] = $ROW;
+$SHOWQUERY = "SELECT showname FROM $TABLE";
+$GETSHOW = mysqli_query($DBC,$SHOWQUERY);
+while($ROW = mysqli_fetch_array($GETSHOW)){
+$SHOWPATH = "./Disk1/".$ROW['showname'];
+$SHOW = $ROW['showname'];
+echo "<a href='$SHOWPATH'>$SHOW</a></br>";
 }
-$EXISTINGSHOWNAME = array();
-foreach($ROWS as $ROW) {
-        $EXISTINGSHOWNAME[] = $ROW['showname'];
-}
-$RESULT1 = implode("i", "<a href='/media/Disk1/$EXISTINGSHOWNAME'>$EXISTINGSHOWNAME)"."</a>";
 
-echo $RESULT1;
 mysqli_close($DBC);
-echo "<br><br>";
 
-
-echo '<a href="test">TEST</a>'; 
-?>
-
-<?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
+//Include the footer - The footer ends the body and html tags </div> tag ends in footer
 include 'footer.php'; ?>
