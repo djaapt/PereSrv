@@ -12,7 +12,7 @@ $EXCLUDE_LIST_PRINTABLE = implode(", ", $EXCLUDE_LIST);
 function clean_up( $TEXT ){
 	//Add any other characters to be removed inside the array
 	$FIXAPOSTROPHE = array("'",);
-	return str_ireplace($FIXAPOSTROPHE, "''", $TEXT);
+	return str_ireplace($FIXAPOSTROPHE, "/'", $TEXT);
 }
 
 //Set TV Show Directory 
