@@ -14,7 +14,7 @@ include '/media/dbinfo.php';
 $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
 
 $query="SELECT showname FROM $TABLE ORDER BY RAND() LIMIT 4";
-if($query_run=mysql_query($query))
+if($query_run=mysqli_query($DBC,$query))
 {
     $i=4;
     $rows=mysql_fetch_array($query_run);
