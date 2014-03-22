@@ -3,7 +3,7 @@
 include 'header.php'; ?>
 
 <div id="info">
-MUSIC
+MUSIC<br><br>
 <?php
 //Build the connection to SQL server
 include '/media/dbinfo.php';
