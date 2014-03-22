@@ -23,5 +23,5 @@ echo '<a href="'.$PATH.'">'.$MEDIA.'</a></br>';
 
 mysqli_close($DBC);
 
-<?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
+//Include the footer - The footer ends the body and html tags </div> tag ends in footer
 include 'footer.php'; ?>
