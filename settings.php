@@ -4,7 +4,7 @@ include 'header.php'; ?>
 
 <div id="info">
 Scan TV Show Folders: <a href="scan.php">SCAN TV Shows</a><br>
-Scan Movie Folders: <a href="moviescan.php">SCAN Movies</a>
-
+Scan Movie Folders: <a href="moviescan.php">SCAN Movies</a><br>
+Scan Music Folders: <a href="scan.php">SCAN Music</a>
 <?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
 include 'footer.php'; ?>
