@@ -11,8 +11,8 @@ $EXCLUDE_LIST_PRINTABLE = implode(", ", $EXCLUDE_LIST);
 //Unwanted characters in query for later
 function clean_up( $TEXT ){
 	//Add any other characters to be removed inside the array
-	$FIXAPOSTROPHE = array("'",);
-	return str_ireplace($FIXAPOSTROPHE, "''", $TEXT);
+	$FIXCHARS = array("'",",",);
+	return str_ireplace($FIXCHARS, "\\".$FIXCHARS, $TEXT);
 }
 
 //Build the connection to SQL server
