@@ -12,8 +12,7 @@ $EXCLUDE_LIST_PRINTABLE = implode(", ", $EXCLUDE_LIST);
 function clean_up( $TEXT ){
 	//Add any other characters to be removed inside the array
 	$FIXCHARS = array("'",",");
-	$FIXCHARLIST = implode($FIXCHARS);
-	return str_ireplace($FIXCHARS, "\\".$FIXCHARLIST, $TEXT);
+	return array_intersect( str_split($TEXT), $FIXCHARS);
 }
 
 //Build the connection to SQL server
