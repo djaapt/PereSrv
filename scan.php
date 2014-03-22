@@ -11,8 +11,8 @@ $EXCLUDE_LIST_PRINTABLE = implode(", ", $EXCLUDE_LIST);
 //Unwanted characters in query for later
 function clean_up( $TEXT ){
 	//Add any other characters to be removed inside the array
-	$FIXCHARS = array("'",",");
-	return array_intersect( str_split($TEXT), $TEXT.$FIXCHARS);
+	$FIXAPOSTROPHE = array("'",);
+	return str_ireplace($FIXAPOSTROPHE, "''", $TEXT);
 }
 
 //Build the connection to SQL server
@@ -29,7 +29,7 @@ $TVFILES = clean_up(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST));
 
 //This one is just for testing, we won't use it in the final version
 echo "Files in the Directory $TVSHOWDIR not showing the excluded list: $EXCLUDE_LIST_PRINTABLE:<br><br>";
-$TVFILES1 = implode(", ", real_escape_string(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST)));
+$TVFILES1 = implode(", ", clean_up(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST)));
 
 //Print results from the test array
 echo "$TVFILES1";
