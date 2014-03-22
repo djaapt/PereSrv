@@ -37,7 +37,7 @@ if($query_run=mysqli_query($DBC,$query))
 </table>
 </div>
 </div>
-<div class="bubble"></div>
+<div class="bubble">
 <div class="music">
 <table align="center" style="margin-left: 30px; margin-right: 30px;">
 <tr>
