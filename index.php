@@ -59,7 +59,9 @@ if($query_run=mysqli_query($DBC,$query))
         $PATH = "./Disk2/Music/".$rows['musicname'];
 		$IMAGEPATH = "$PATH/cover.jpg";
 		$MUSIC = $rows['musicname'];
-		echo '<td style=padding-top: 5px; padding-bottom: 5px;><a href="'.$PATH.'"><img src="'.$IMAGEPATH.'" title="'.$MUSIC.'" height=140></a></td>';
+		echo '<a href="'.$PATH.'">'.$MUSIC.'</a></br>';
+		//When we have pictures we can uncomment the blow
+		//echo '<td style=padding-top: 5px; padding-bottom: 5px;><a href="'.$PATH.'"><img src="'.$IMAGEPATH.'" title="'.$MUSIC.'" height=140></a></td>';
         $i=$i-1;
     }
 } else {
