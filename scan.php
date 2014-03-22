@@ -15,7 +15,13 @@ function clean_up( $TEXT ){
 	return str_ireplace($FIXAPOSTROPHE, "''", $TEXT);
 }
 
-//Set TV Show Directory 
+//Build the connection to SQL server
+include '/media/dbinfo.php';
+
+//DB connection variable to call later
+$DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
+
+//Set media directory's 
 $TVSHOWDIR = "/media/Disk1/";
 
 //Scans the directory and runs it through the cleanup function we created
@@ -27,9 +33,6 @@ $TVFILES1 = implode(", ", clean_up(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST)
 
 //Print results from the test array
 echo "$TVFILES1";
-
-//Build the connection to SQL server
-include '/media/dbinfo.php';
 
 //DB connection variable to call later
 $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
