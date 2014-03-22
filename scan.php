@@ -11,7 +11,7 @@ $EXCLUDE_LIST_PRINTABLE = implode(", ", $EXCLUDE_LIST);
 //Unwanted characters in query for later
 function clean_up( $TEXT ){
 	//Add any other characters to be removed inside the array
-	$FIXCHARS = array("'",",",);
+	$FIXCHARS = array("'",",");
 	return str_ireplace($FIXCHARS, "\\".$FIXCHARS, $TEXT);
 }
 
