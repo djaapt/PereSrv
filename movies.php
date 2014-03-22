@@ -17,7 +17,7 @@ $QUERY = "SELECT moviename FROM $TABLE";
 $GET = mysqli_query($DBC,$QUERY);
 while($ROW = mysqli_fetch_array($GET)){
 $MEDIA = $ROW['moviename'];
-$PATH = "./Disk4/2010's/".$MEDIA;
+$PATH = "../Videos/".$MEDIA;
 echo '<a href="'.$PATH.'">'.$MEDIA.'</a></br>';
 }
 

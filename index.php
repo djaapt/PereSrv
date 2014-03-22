@@ -22,7 +22,7 @@ if($query_run=mysqli_query($DBC,$query))
     $rows=mysqli_fetch_array($query_run);
     while($rows=mysqli_fetch_array($query_run))
     {
-        $PATH = "./Disk4/2010's/".$rows['moviename'];
+        $PATH = "../Videos/".$rows['moviename'];
 		$IMAGEPATH = "$PATH/folder.jpg";
 		$MOV = $rows['moviename'];
 		echo '<td style=padding-top: 5px; padding-bottom: 5px;><a href="'.$PATH.'">'.$MOV.'</a></td>';
@@ -57,7 +57,7 @@ if($query_run=mysqli_query($DBC,$query))
     $rows=mysqli_fetch_array($query_run);
     while($rows=mysqli_fetch_array($query_run))
     {
-        $SHOWPATH = "./Disk1/".$rows['showname'];
+        $SHOWPATH = "../Seasons/".$rows['showname'];
 		$IMAGEPATH = "$SHOWPATH/folder.jpg";
 		$SHOW = $rows['showname'];
 		echo '<td style=padding-top: 5px; padding-bottom: 5px;><a href="'.$SHOWPATH.'"><img src="'.$IMAGEPATH.'" title="'.$SHOW.'" height=140></a></td>';

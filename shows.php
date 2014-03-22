@@ -16,7 +16,7 @@ $SHOWQUERY = "SELECT showname FROM $TABLE";
 $GETSHOW = mysqli_query($DBC,$SHOWQUERY);
 while($ROW = mysqli_fetch_array($GETSHOW)){
 $SHOW = $ROW['showname'];
-$SHOWPATH = "./Disk1/".$SHOW;
+$SHOWPATH = "../Seasons/".$SHOW;
 echo '<a href="'.$SHOWPATH.'">'.$SHOW.'</a></br>';
 }
 
