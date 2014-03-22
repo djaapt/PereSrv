@@ -23,7 +23,7 @@ $TABLE = "movies";
 $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
 
 //Set media directory's 
-$MOVIEDIR = "Videos/";
+$MOVIEDIR = "../Videos/";
 
 //Scans the directory and runs it through the cleanup function we created
 $MOVFILES = clean_up(array_diff(scandir($MOVIEDIR),$EXCLUDE_LIST));
