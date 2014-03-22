@@ -68,7 +68,7 @@ if (empty($REMOVEDUPS)) {
 	//Build the query your going to use
 	$MOVQUERY = "INSERT INTO $TABLE";
 	//Comma seperates each value and add single quotes(') around each value
-	$MOVUERY .= " VALUES (NULL,'".implode("'),(NULL,'", $REMOVEDUPS)."') ";
+	$MOVQUERY .= " VALUES (NULL,'".implode("'),(NULL,'", $REMOVEDUPS)."') ";
 	//Print the query
 	echo $MOVQUERY;
 
