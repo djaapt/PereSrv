@@ -55,7 +55,7 @@ mysqli_close($DBC);
 echo "<br><br>";
 
 //Compare the 2 arrays $TVFILES1 with $RESULT1 and return only non-duplicates
-$REMOVEDUPS = mysql_real_escape_string(array_diff(explode(", ",$TVFILES1),explode(", ",$RESULT1)));
+$REMOVEDUPS = array_diff(explode(", ",$TVFILES1),explode(", ",$RESULT1));
 echo "Comparison between data currently in the MYSQL DB and our directory scan showing only items that are not in both.<br><br>";
 //Check to see if there are any diffrences, if there are send them to the Database.
 if (empty($REMOVEDUPS)) {
