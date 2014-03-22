@@ -6,7 +6,7 @@ include 'header.php'; ?>
 Back To Settings: <a href="settings.php"><span>Settings</span></a><br><br>
 <?php
 //Set files/dirs to exclude from array
-$EXCLUDE_LIST = array(".","..",".htaccess","index.php","fileNice","desktop.ini","*.sh");
+$EXCLUDE_LIST = array(".","..",".htaccess","index.php","fileNice","desktop.ini","mp3con.sh");
 $EXCLUDE_LIST_PRINTABLE = implode(", ", $EXCLUDE_LIST);
 //Unwanted characters in query for later
 function clean_up( $TEXT ){
