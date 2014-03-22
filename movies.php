@@ -3,7 +3,7 @@
 include 'header.php'; ?>
 
 <div id="info">
-Movies
+Movies <br><br>
 <?php
 //Build the connection to SQL server
 include '/media/dbinfo.php';
@@ -17,7 +17,7 @@ $QUERY = "SELECT moviename FROM $TABLE";
 $GET = mysqli_query($DBC,$QUERY);
 while($ROW = mysqli_fetch_array($GET)){
 $MEDIA = $ROW['moviename'];
-$PATH = "./Disk4/2010's".$MEDIA;
+$PATH = "./Disk4/2010's/".$MEDIA;
 echo '<a href="'.$PATH.'">'.$MEDIA.'</a></br>';
 }
 
