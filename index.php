@@ -3,7 +3,41 @@
 include 'header.php'; ?>
 
 <div id="info">
-<div class="bubble"></div>
+<div class="bubble">
+<div class="movies">
+<table align="center" style="margin-left: 30px; margin-right: 30px;">
+<tr>
+<?php
+//Build the connection to SQL server
+include '/media/dbinfo.php';
+
+//DB connection variable to call later
+$TABLE = "movies";
+$DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
+
+$query="SELECT moviename FROM $TABLE ORDER BY RAND() LIMIT 11";
+if($query_run=mysqli_query($DBC,$query))
+{
+    $i=11;
+    $rows=mysqli_fetch_array($query_run);
+    while($rows=mysqli_fetch_array($query_run))
+    {
+        $PATH = "./Disk4/2010's/".$rows['moviename'];
+		$IMAGEPATH = "$PATH/folder.jpg";
+		$MOV = $rows['moviename'];
+		echo '<td style=padding-top: 5px; padding-bottom: 5px;><a href="'.$PATH.'">'.$MOV.'</a></td>';
+		//When we have pictures we can uncomment the blow
+		//echo '<td style=padding-top: 5px; padding-bottom: 5px;><a href="'.$PATH.'"><img src="'.$IMAGEPATH.'" title="'.$MOV.'" height=140></a></td>';
+        $i=$i-1;
+    }
+} else {
+    echo'<font color="red"> Query does not run. </font>';
+}
+?>
+</tr>
+</table>
+</div>
+</div>
 <div class="bubble">
 <div class="shows">
 <table align="center" style="margin-left: 30px; margin-right: 30px;">
