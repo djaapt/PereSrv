@@ -4,6 +4,24 @@ include 'header.php'; ?>
 
 <div id="info">
 MUSIC
+<?php
+//Build the connection to SQL server
+include '/media/dbinfo.php';
 
-<?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
+//DB connection variable to call later
+$TABLE = "music";
+$DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
+
+//Build query to check for duplicates already in the database
+$QUERY = "SELECT musicname FROM $TABLE";
+$GET = mysqli_query($DBC,$QUERY);
+while($ROW = mysqli_fetch_array($GET)){
+$MEDIA = $ROW['musicname'];
+$PATH = "./Disk2/Music/".$MEDIA;
+echo '<a href="'.$PATH.'">'.$MEDIA.'</a></br>';
+}
+
+mysqli_close($DBC);
+
+//Include the footer - The footer ends the body and html tags </div> tag ends in footer
 include 'footer.php'; ?>
