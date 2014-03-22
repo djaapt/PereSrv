@@ -6,7 +6,7 @@ include 'header.php'; ?>
 Back To Settings: <a href="settings.php"><span>Settings</span></a><br><br>
 <?php
 //Set files/dirs to exclude from array
-$EXCLUDE_LIST = array(".","..",".htaccess","index.php","fileNice");
+$EXCLUDE_LIST = array(".","..",".htaccess","index.php","fileNice","desktop.ini");
 $EXCLUDE_LIST_PRINTABLE = implode(", ", $EXCLUDE_LIST);
 //Unwanted characters in query for later
 function clean_up( $TEXT ){
@@ -50,13 +50,13 @@ foreach($ROWS as $ROW) {
 }
 $RESULT1 = implode(", ",$EXISTING);
 
-echo "<br><br><br>Data That is currently in the MYSQL DB:<br><br>";
+echo "<br><br><br>Data that is currently in the MYSQL DB:<br><br>";
 echo $RESULT1;
 mysqli_close($DBC);
 echo "<br><br>";
 
-//Compare the 2 arrays $MOVFILES1 with $RESULT1 and return only non-duplicates
-$REMOVEDUPS = array_diff(explode(", ",$MOVFILES1),explode(", ",$RESULT1));
+//Compare the 2 arrays $FILES1 with $RESULT1 and return only non-duplicates
+$REMOVEDUPS = array_diff(explode(", ",$FILES1),explode(", ",$RESULT1));
 echo "Comparison between data currently in the MYSQL DB and our directory scan showing only items that are not in both.<br><br>";
 //Check to see if there are any differences, if there are send them to the Database.
 if (empty($REMOVEDUPS)) {
@@ -67,7 +67,7 @@ if (empty($REMOVEDUPS)) {
 	echo "<br><br>";
 	//Build the query your going to use
 	$QUERY = "INSERT INTO $TABLE";
-	//Comma seperates each value and add single quotes(') around each value
+	//Comma separate each value and add single quotes(') around each value
 	$QUERY .= " VALUES (NULL,'".implode("'),(NULL,'", $REMOVEDUPS)."') ";
 	//Print the query
 	echo $QUERY;
