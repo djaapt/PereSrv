@@ -13,7 +13,7 @@ include 'header.php'; ?>
   jwplayer("myVideo").setup({
     modes: [
         { type: 'html5' },
-        { type: 'mp4', src: '/jwplayer/player.swf' }
+        { type: 'mp4', src: '/scripts/player.swf' }
     ]
   });
 </script>
