@@ -13,7 +13,7 @@ include 'header.php'; ?>
   jwplayer("myVideo").setup({
     modes: [
         { type: 'html5' },
-        { type: 'mkv', src: '/scripts/player.swf' }
+        { type: 'application/x-shockwave-flash', src: '/scripts/player.swf' }
     ]
   });
 </script>
