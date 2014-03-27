@@ -5,8 +5,8 @@ include 'header.php'; ?>
 <script type="text/javascript" src="/scripts/jwplayer.js"></script>
 
 <video height="270" width="480" id="myVideo">
-  <source src="/Videos/Mulan.1998.mkv" type="video/mkv">
-  <source src="/Videos/Mulan.1998.mkv" type="video/mkv">
+  <source src="/Videos/Mulan.1998.mkv" type="video/x-matroska">
+  <source src="/Videos/Mulan.1998.mkv" type="video/x-matroska">
 </video>
 
 <script type="text/javascript">
