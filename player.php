@@ -9,6 +9,6 @@
     'height': '270',
     'autoplay': 'true',
     'volume': '60',
-    'file': 'testing.php'
+    'streamer': 'testing.php'
   });
 </script>
