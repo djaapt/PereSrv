@@ -2,11 +2,9 @@
 <?php //Include the header - header starts the html and body tags
 include 'header.php'; ?>
 
-<script type="text/javascript" src="/scripts/jwplayer.js"></script>
+<script type="text/javascript" src="/scripts/jwplayer.js" ></script>
 
-<video height="270" width="480" id="myVideo">
-  <source src="/Videos/The.Avengers.2012.mkv" type="video/mkv">
-</video>
+<div id="myElement">Loading the player ...</div>
 
 <script type="text/javascript">
     jwplayer("myElement").setup({
