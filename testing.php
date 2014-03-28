@@ -17,7 +17,7 @@ system('killall -9 flvtool2 2>&1');
 
 echo 'starting transcoding...<br/>';
 // $PID = shell_exec("nohup ffmpeg -i rickroll.mp4 -ar 22050 -ab 32000 -f flv -s 320x240 test.flv | flvtool2 -U stdin test.flv 2> /tmp/mehe > /tmp/meh & echo $!");
-$PID = shell_exec("nohup ('/usr/bin/ffmpeg -i /var/www/PereSrv/Videos/Brave.2012.mp4 -f webm -vcodec libvpx -acodec libvorbis -aq 90 -ac 2 - 2> /tmp/mehe > /tmp/meh & echo $!");
+$PID = shell_exec("nohup /usr/bin/ffmpeg -i /var/www/PereSrv/Videos/Brave.2012.mp4 -f webm -vcodec libvpx -acodec libvorbis -aq 90 -ac 2 - 2> /tmp/mehe > /tmp/meh & echo $!");
 
 echo 'created pid: '. $PID;
 
