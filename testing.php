@@ -9,12 +9,11 @@ include 'header.php'; ?>
 </video>
 
 <script type="text/javascript">
-  jwplayer("myVideo").setup({
-    modes: [
-        { type: 'html5' },
-        { type: 'flash', src: '/scripts/jwplayer.flash.swf' }
-    ]
-  });
+    jwplayer("myElement").setup({
+        file: "/Videos/The.Avengers.2012.mkv",
+        height: 360,
+        width: 640
+    });
 </script>
 
 
