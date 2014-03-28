@@ -5,7 +5,6 @@ include 'header.php'; ?>
 extension_loaded('ffmpeg') or die('Error in loading ffmpeg');
 
 $ffmpegInstance = new ffmpeg_movie('/Videos/Brave.2012.mp4');
-echo "getDuration: " .$ffmpegInstance-&gt;getDuration().;
 ?>
 <?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
 include 'footer.php'; ?>
