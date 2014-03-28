@@ -15,8 +15,6 @@ $descriptorspec = array(
 );
 $process = proc_open("nice -n ".FFMPEG_PRIORITY." ".$cmd, $descriptorspec, $pipes);
 
-dbg("Started FFmpeg process.\nCommand Line: $cmd");
-
 $stdout_size = 0;
 if (is_resource($process)) {
     while(!feof($pipes[P_STDOUT])){
