@@ -5,9 +5,9 @@ include 'header.php'; ?>
 extension_loaded('ffmpeg') or die('Error in loading ffmpeg');
 
 $ffmpegInstance = new ffmpeg_movie('/Videos/Brave.2012.mp4');
-echo "getDuration: " . $ffmpegInstance-&gt;getDuration() .
-"getFrameCount: " . $ffmpegInstance-&gt;getFrameCount() .
-"getFrameRate: " . $ffmpegInstance-&gt;getFrameRate() .
+echo "getDuration: " .$ffmpegInstance-&gt;getDuration().
+"getFrameCount: " .$ffmpegInstance-&gt;getFrameCount().
+"getFrameRate: " .$ffmpegInstance-&gt;getFrameRate().
 "getFilename: " . $ffmpegInstance-&gt;getFilename() .
 "getComment: " . $ffmpegInstance-&gt;getComment() .
 "getTitle: " . $ffmpegInstance-&gt;getTitle() .
