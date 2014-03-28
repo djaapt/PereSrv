@@ -1,19 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<?php //Include the header - header starts the html and body tags
-include 'header.php'; ?>
+<?php
+header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
-<script type="text/javascript" src="/scripts/jwplayer.js" ></script>
+system('/usr/bin/ffmpeg -i /var/www/PereSrv/Videos/Brave.2012.mp4 -f webm -vcodec libvpx -acodec libvorbis -aq 90 -ac 2 -');
 
-<div id="myElement">Loading the player ...</div>
-
-<script type="text/javascript">
-    jwplayer("myElement").setup({
-        file: "/Videos/The.Avengers.2012.mkv",
-        height: 360,
-        width: 640
-    });
-</script>
-
-
-<?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
-include 'footer.php'; ?>
+?>
