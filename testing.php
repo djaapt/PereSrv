@@ -8,9 +8,6 @@ echo exec('/usr/bin/ffmpeg -i /var/www/PereSrv/Videos/Brave.2012.mp4 -f webm -vc
 var_dump($output);
 
 $cmd = 'wget -qO- "https://djaapt.com:8443/stream" | /usr/bin/ffmpeg -i /var/www/PereSrv/Videos/Brave.2012.mp4 -f webm -vcodec libvpx -acodec libvorbis -aq 90 -ac 2 -';
-header('Content-type: audio/mpeg');
-header("Content-Type: application/octet-stream");
-header("Content-Disposition: attachment; filename=\"1378457645_myfile.mp3\"");
 passthru($cmd);
 
 ?>
