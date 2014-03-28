@@ -5,14 +5,14 @@ include 'header.php'; ?>
 <script type="text/javascript" src="/scripts/jwplayer.js"></script>
 
 <video height="270" width="480" id="myVideo">
-  <source src="/var/www/Videos/The.Avengers.2012.mkv" type="video/mkv">
+  <source src="/Videos/The.Avengers.2012.mkv" type="video/mkv">
 </video>
 
 <script type="text/javascript">
   jwplayer("myVideo").setup({
     modes: [
         { type: 'html5' },
-        { type: 'flash', src: '/jwplayer/player.swf' }
+        { type: 'flash', src: '/scripts/player.swf' }
     ]
   });
 </script>
