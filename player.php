@@ -9,6 +9,6 @@
     'height': '270',
     'autoplay': 'true',
     'volume': '60',
-    'file': 'https://djaapt.com:8443/testing.php'
+    'file': 'https://djaapt.com:8443/testing'
   });
 </script>
