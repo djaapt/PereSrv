@@ -6,7 +6,9 @@
 
 <script type="text/javascript">
     jwplayer("myElement").setup({
-        file: "https://djaapt.com:8443/testing.php",
+        flashplayer: "/scripts/jwplayer.flash.swf",
+	streamer: "https://djaapt.com:8443/testing",
+	file: "Brave.2012.webm",
     });
 </script
 </BODY>
