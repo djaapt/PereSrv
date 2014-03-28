@@ -8,7 +8,7 @@ echo exec('/usr/bin/ffmpeg -i /var/www/PereSrv/Videos/Brave.2012.mp4 -f webm -vc
 var_dump($output);
 
 $cmd = 'wget -qO- "https://djaapt.com:8443/stream" | /usr/bin/ffmpeg -i /var/www/PereSrv/Videos/Brave.2012.mp4 -f webm -vcodec libvpx -acodec libvorbis -aq 90 -ac 2 -';
-passthru($cmd);
+passthru "<video>($cmd)</video>"; 
 
 ?>
 <?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
