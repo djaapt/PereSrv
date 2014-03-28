@@ -2,6 +2,8 @@
 <?php //Include the header - header starts the html and body tags
 include 'header.php'; ?>
 <?php
+extension_loaded('ffmpeg') or die('Error in loading ffmpeg');
+
 $ffmpegInstance = new ffmpeg_movie('/Videos/Brave.2012.mp4');
 echo "getDuration: " . $ffmpegInstance-&gt;getDuration() .
 "getFrameCount: " . $ffmpegInstance-&gt;getFrameCount() .
