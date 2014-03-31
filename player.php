@@ -6,5 +6,6 @@ include 'header.php'; ?>
 <video  height="531"  width="945" autoplay="autoplay" controls="controls">
 <source src="stream.m3u8" />
 </video> 
+
 <?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
 include 'footer.php'; ?>
