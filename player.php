@@ -3,7 +3,7 @@
 include 'header.php'; ?>
 <div id="info">
 <video height="531" width="945" autoplay="autoplay" controls="controls">
-<source src="stream.m3u8" />
+<source src="/Videos/1000.BC.2008.webm" />
 </video> 
 <?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
 include 'footer.php'; ?>
