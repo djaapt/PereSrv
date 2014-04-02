@@ -26,9 +26,9 @@ if($query_run=mysqli_query($DBC,$query))
 		$MOV = $rows['moviename'];
 		$Title = substr($MOV, 0, -4);
 		$IMAGEPATH = "../movieposters/$Title.jpg";
-		echo '<td style=padding-top: 5px; padding-bottom: 5px;><a href="'.$PATH.'">'.$MOV.'</a></td>';
-		//When we have pictures we can uncomment the blow
-		//echo '<td style=padding-top: 5px; padding-bottom: 5px;><a href="'.$PATH.'"><img src="'.$IMAGEPATH.'" title="'.$MOV.'" height=140></a></td>';
+		//echo '<td style=padding-top: 5px; padding-bottom: 5px;><a href="'.$PATH.'">'.$MOV.'</a></td>';
+		When we have pictures we can uncomment the blow
+		echo '<td style=padding-top: 5px; padding-bottom: 5px;><a href="'.$PATH.'"><img src="'.$IMAGEPATH.'" title="'.$MOV.'" height=140></a></td>';
         $i=$i-1;
     }
 } else {
