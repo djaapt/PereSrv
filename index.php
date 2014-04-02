@@ -23,8 +23,9 @@ if($query_run=mysqli_query($DBC,$query))
     while($rows=mysqli_fetch_array($query_run))
     {
         $PATH = "../Videos/".$rows['moviename'];
-		$IMAGEPATH = "$PATH/folder.jpg";
 		$MOV = $rows['moviename'];
+		$Title = substr($MOV, 0, -4);
+		$IMAGEPATH = "../movieposters/$Title.jpg";
 		echo '<td style=padding-top: 5px; padding-bottom: 5px;><a href="'.$PATH.'">'.$MOV.'</a></td>';
 		//When we have pictures we can uncomment the blow
 		//echo '<td style=padding-top: 5px; padding-bottom: 5px;><a href="'.$PATH.'"><img src="'.$IMAGEPATH.'" title="'.$MOV.'" height=140></a></td>';
