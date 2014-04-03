@@ -23,5 +23,6 @@ header("location:main_login.php");
    <li><a href='#'><span>Other</span></a></li>
    <li><a href="settings.php"><span>Settings</span></a></li>
 </ul>
+<p align="right"><a href="logout.php"><span>Logout</span></a></p>
 </div>
 </div>
