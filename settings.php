@@ -6,6 +6,6 @@ include 'header.php'; ?>
 Scan TV Show Folders: <a href="scan.php">SCAN TV Shows</a><br>
 Scan Movie Folders: <a href="moviescan.php">SCAN Movies</a><br>
 Scan Music Folders: <a href="musicscan.php">SCAN Music</a><br><br>
-Users: <a href="settings.php?pg=Users">Users</a>
+Users: <a href="settings_users.php">Users</a>
 <?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
 include 'footer.php'; ?>
