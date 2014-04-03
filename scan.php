@@ -24,7 +24,7 @@ $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Databa
 //Set media directory's 
 $TVSHOWDIR = "Seasons/";
 
-//Scans the directory and runs it through the cleanup function we created
+//Scans the directory and runs it through the clean-up function we created
 $TVFILES = clean_up(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST));
 
 //This one is just for testing, we won't use it in the final version
@@ -57,7 +57,7 @@ echo "<br><br>";
 //Compare the 2 arrays $TVFILES1 with $RESULT1 and return only non-duplicates
 $REMOVEDUPS = array_diff(explode(", ",$TVFILES1),explode(", ",$RESULT1));
 echo "Comparison between data currently in the MYSQL DB and our directory scan showing only items that are not in both.<br><br>";
-//Check to see if there are any diffrences, if there are send them to the Database.
+//Check to see if there are any differences, if there are send them to the Database.
 if (empty($REMOVEDUPS)) {
 	echo "Nothing is new<br><br>";
 } else {
@@ -66,13 +66,13 @@ if (empty($REMOVEDUPS)) {
 	echo "<br><br>";
 	//Build the query your going to use
 	$TVQUERY = "INSERT INTO $TABLE";
-	//Comma seperates each value and add single quotes(') around each value
+	//Comma separates each value and add single quotes(') around each value
 	$TVQUERY .= " VALUES (NULL,'".implode("'),(NULL,'", $REMOVEDUPS)."') ";
 	//Print the query
 	echo $TVQUERY;
 
 	//Execute your query and print the error message if there is one
-	//If Error querying database. is not printed it was sucesfull
+	//If Error querying database. is not printed it was successful
 	mysqli_query($DBC, $TVQUERY) or die('Error querying database.');
 
 	//Close Database connection
