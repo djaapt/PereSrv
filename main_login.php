@@ -9,12 +9,12 @@
 <tr>
 <td width="78">Username</td>
 <td width="6">:</td>
-<td width="294"><input name="myusername" type="text" id="myusername"></td>
+<td width="294"><input name="USER" type="text" id="USER"></td>
 </tr>
 <tr>
 <td>Password</td>
 <td>:</td>
-<td><input name="mypassword" type="text" id="mypassword"></td>
+<td><input name="PASS" type="text" id="PASS"></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
