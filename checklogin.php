@@ -17,6 +17,7 @@ $USER = stripslashes($USER);
 $PASS = stripslashes($PASS);
 $USER = mysql_real_escape_string($USER);
 $PASS = mysql_real_escape_string($PASS);
+$PASS = md5($PASS);
 $SQL="SELECT * FROM $TABLE WHERE username='$USER' and password='$PASS'";
 $result=mysql_query($SQL);
 
