@@ -31,7 +31,7 @@ padding:0;
 }
 #cssmenu li r{
 display:block;
-float:right;
+text-align:right;
 margin:0;
 padding:0;
 }
