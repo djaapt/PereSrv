@@ -23,8 +23,8 @@ $PAGELOC=$_SERVER['PAT_INFO'];
    <li><a href="music.php"><span>Music</span></a></li>
    <li><a href='#'><span>Other</span></a></li>
    <li><a href="/settings/settings.php"><span>Settings</span></a></li>
+   <li><span><?php echo $PAGELOC;?></span></li>
    <li style="float: right;"><a href="logout.php"><span>Logout</span></a></li>
 </ul>
 </div>
 </div>
-<?php echo $PAGELOC;?>
