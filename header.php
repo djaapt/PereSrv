@@ -12,7 +12,7 @@ include_once 'config.php';
 <head>
 <title>peresrv</title>
 <link rel="icon" type="image/png" href="images/favicon.png">
-<LINK href="style.css" rel="stylesheet" type="text/css">
+<LINK href="<?php $BASEPATH; ?>style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id="header">
