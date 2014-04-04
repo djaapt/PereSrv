@@ -11,6 +11,10 @@ include 'header.php'; ?>
 <input type='text' name='name' id='name' maxlength="50" /><br><br>
 <label for='name' >Last Name*: </label>
 <input type='text' name='name' id='name' maxlength="50" /><br><br>
+<label for='name' >Max Rating*: </label>
+<input type='text' name='name' id='name' maxlength="50" /><br><br>
+<label for='name' >Administrator?*: </label>
+<input type='text' name='name' id='name' maxlength="50" /><br><br>
 <label for='email' >Email Address*:</label>
 <input type='text' name='email' id='email' maxlength="50" /><br><br>
 <label for='username' >UserName*:</label>
