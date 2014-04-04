@@ -1,6 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <?php //Include the header - header starts the html and body tags
-include_once $BASEPATH.'/header.php';?>
+include_once $BASEPATH.'/header.php';
+echo $BASEPATH;?>
 
 <div id="info">
 Scan TV Show Folders: <a href="scan.php">SCAN TV Shows</a><br>
