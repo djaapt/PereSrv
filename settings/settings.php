@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <?php //Include the header - header starts the html and body tags
-include_once $BASEPATH.'/header.php';?>
+include_once '../header.php';?>
 
 <div id="info">
 <?php echo $BASEPATH; ?>
