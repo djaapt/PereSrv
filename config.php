@@ -2,5 +2,5 @@
 /*
 PereSrv Configuration File
 */
-$BASEPATH=dirname(__FILE__);
+$BASEPATH = dirname(__FILE__);
 ?>
