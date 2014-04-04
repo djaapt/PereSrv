@@ -5,7 +5,7 @@ session_start();
 if(!session_is_registered(USER)){
 header("location:main_login.php");
 }
-$PAGELOC=$_SERVER['PAT_INFO']; 
+$PAGELOC=$_SERVER['PATH_INFO']; 
 ?>
 <html>
 <head>
