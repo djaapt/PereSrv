@@ -5,6 +5,7 @@ session_start();
 if(!session_is_registered(USER)){
 header("location:main_login.php");
 }
+$PAGELOC=$_SERVER['PAT_INFO']; 
 ?>
 <html>
 <head>
@@ -16,7 +17,7 @@ header("location:main_login.php");
 <div id="header">
 <div id='cssmenu'>
 <ul>
-   <li class='active '><a href="index.php"><span>Home</span></a></li>
+   <li class='active'><a href="index.php"><span>Home</span></a></li>
    <li><a href="movies.php"><span>Movies</span></a></li>
    <li><a href="shows.php"><span>TVShows</span></a></li>
    <li><a href="music.php"><span>Music</span></a></li>
@@ -25,4 +26,5 @@ header("location:main_login.php");
    <li style="float: right;"><a href="logout.php"><span>Logout</span></a></li>
 </ul>
 </div>
+<?php echo $PAGELOC;?>
 </div>
