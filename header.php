@@ -23,7 +23,7 @@ include_once 'config.php';
    <li><a href="shows.php"><span>TVShows</span></a></li>
    <li><a href="music.php"><span>Music</span></a></li>
    <li><a href='#'><span>Other</span></a></li>
-   <li><a href="<?php echo $BASEPATH; ?>/settings/settings.php"><span>Settings</span></a></li>
+   <li><a href="<?php $BASEPATH; ?>/settings/settings.php"><span>Settings</span></a></li>
    <li style="float: right;"><a href="logout.php"><span>Logout</span></a></li>
 </ul>
 </div>
