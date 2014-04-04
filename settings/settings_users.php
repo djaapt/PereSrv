@@ -3,7 +3,7 @@
 include '../header.php'; ?>
 
 <div id="info">
-<form id='register' action='settings_user.php' method='post' accept-charset='UTF-8'>
+<form id='register' action='settings_users.php' method='post' accept-charset='UTF-8'>
 <fieldset>
 <legend>Register</legend>
 <input type='hidden' name='submitted' id='submitted' value='1'/>
