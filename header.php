@@ -26,5 +26,5 @@ $PAGELOC=$_SERVER['PAT_INFO'];
    <li style="float: right;"><a href="logout.php"><span>Logout</span></a></li>
 </ul>
 </div>
-<?php echo $PAGELOC;?>
 </div>
+<?php echo $PAGELOC;?>
