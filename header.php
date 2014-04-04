@@ -5,7 +5,8 @@ session_start();
 if(!session_is_registered(USER)){
 header("location:main_login.php");
 }
-$PAGELOC=$_SERVER['PATH_INFO']; 
+//Include config file do not include this part in every page
+include_once 'config.php';
 ?>
 <html>
 <head>
@@ -22,7 +23,7 @@ $PAGELOC=$_SERVER['PATH_INFO'];
    <li><a href="shows.php"><span>TVShows</span></a></li>
    <li><a href="music.php"><span>Music</span></a></li>
    <li><a href='#'><span>Other</span></a></li>
-   <li><a href="/settings/settings.php"><span>Settings</span></a></li>
+   <li><a href="$BASEPATH/settings/settings.php"><span>Settings</span></a></li>
    <li><span><?php echo $PAGELOC;?></span></li>
    <li style="float: right;"><a href="logout.php"><span>Logout</span></a></li>
 </ul>
