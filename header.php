@@ -6,7 +6,7 @@ if(!session_is_registered(USER)){
 header("location:$BASEPATH/main_login.php");
 }
 //Include config file do not include this part in every page
-include_once $BASEPATH.'/config.php';
+include_once '$BASEPATH/config.php';
 ?>
 <html>
 <head>
