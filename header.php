@@ -5,7 +5,7 @@ include 'config.php';
 // Put this code in first line of web page. 
 session_start();
 if(!session_is_registered(USER)){
-header("location:" BASEPATH."/main_login.php");
+header("location:/var/www/PereSrv/main_login.php");
 }
 ?>
 <html>
