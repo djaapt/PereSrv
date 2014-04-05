@@ -1,6 +1,7 @@
 <?php
 //Include config file do not include this part in every page
-include_once 'config.php';
+include 'config.php';
+define('BASEPATH', dirname(__FILE__));
 // Check if session is not registered, redirect back to main page. 
 // Put this code in first line of web page. 
 session_start();
