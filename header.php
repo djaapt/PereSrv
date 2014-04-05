@@ -1,12 +1,12 @@
 <?php
+//Include config file do not include this part in every page
+include_once 'config.php';
 // Check if session is not registered, redirect back to main page. 
 // Put this code in first line of web page. 
 session_start();
 if(!session_is_registered(USER)){
 header("location:BASEPATH/main_login.php");
 }
-//Include config file do not include this part in every page
-include_once 'config.php';
 ?>
 <html>
 <head>
