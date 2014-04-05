@@ -4,7 +4,7 @@
 include_once 'config.php';
 session_start();
 if(!session_is_registered(USER)){
-header("location:".BASEURL."main_login.php");
+header("location:".BASEURL."/main_login.php");
 }
 ?>
 <html>
