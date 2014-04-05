@@ -1,5 +1,5 @@
 <?php
-
+include_once 'config.php';
 //Build the connection to SQL server
 include '/media/dbinfo.php';
 $TABLE = "members"; // Table name 
