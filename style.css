@@ -1,5 +1,5 @@
 body{
-margin:0;
+margin: 30px 0;
 overflow: hidden;
 }
 #header{
@@ -51,7 +51,6 @@ left: 0;
 border: 0;
 height: 100%;
 width: 100%;
-padding: 30px 0;
 }
 .bubble{
     background-color: #c1c1c1;
