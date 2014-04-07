@@ -3,6 +3,7 @@ margin: 0;
 background-color: #344152;
 }
 #header{
+position:fixed;
 top:0;
 width:100%;
 border:0;
