@@ -2,17 +2,10 @@
 <?php //Include the header - header starts the html and body tags
 include_once '../header.php'; 
 include_once '/media/dbinfo.php';
-$FIRSTNAME = check_input($_POST['FirstName'],"Enter First Name!");
-$LASTNAME = check_input($_POST['LastName'],"Enter Last Name!");
-$USERNAME = check_input($_POST['username'],"Enter Userame!");
-$PASSWORD = check_input($_POST['password'],"Enter Password!");
-$EMAIL = check_input($_POST['Email'],"Enter Email Address!");
-$MAXRATING = check_input($_POST['MaxRating']);
-$ADMIN = check_input($_POST['Admin']);
 ?>
 
 <div id="info">
-<form id='register' action='settings_users.php?user' method='post'>
+<form name='New User' method='post' action='settings_users.php?adding=1'>
 <legend>Register</legend>
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 <label for='FirstName' >First Name*: </label>
@@ -30,10 +23,22 @@ $ADMIN = check_input($_POST['Admin']);
 	<option value="100" selected>All</option>
 </select>
 <input type='checkbox' name='Admin' value="1">Administrator<br><br>
-<input type='submit' name='Submit' value='Submit' />
+<input type='submit' value='Add' />
 </form>
 
 <?php
+if (isset ($_REQUEST['adding'])) {
+	$ADDING = $_REQUEST['adding'];
+	if ($ADDING == 1) {
+		$FIRSTNAME = check_input($_POST['FirstName'],"Enter First Name!");
+		$LASTNAME = check_input($_POST['LastName'],"Enter Last Name!");
+		$USERNAME = check_input($_POST['username'],"Enter Userame!");
+		$PASSWORD = check_input($_POST['password'],"Enter Password!");
+		$EMAIL = check_input($_POST['Email'],"Enter Email Address!");
+		$MAXRATING = check_input($_POST['MaxRating']);
+		$ADMIN = check_input($_POST['Admin']);
+	}
+}
 function check_input($DATA, $ERROR='')
 {
     $DATA = trim($DATA);
