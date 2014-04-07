@@ -39,7 +39,7 @@ if (isset ($_REQUEST['adding'])) {
 		$RESULT = mysqli_query($QUERY);
 		if (mysql_num_rows($RESULT) >= 1) {	
 			$DUPERROR = "Please enter another Username";
-		)
+		}
 		else { $DUPERROR = "Enter Username!");}
 		$FIRSTNAME = check_input($_POST['FirstName'],"Enter First Name!");
 		$LASTNAME = check_input($_POST['LastName'],"Enter Last Name!");
