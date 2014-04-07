@@ -12,7 +12,7 @@ $ADMIN = check_input($_POST['Admin']);
 ?>
 
 <div id="info">
-<form id='register' action='settings_users.php' method='post'>
+<form id='register' action='settings_users.php?user' method='post'>
 <legend>Register</legend>
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 <label for='FirstName' >First Name*: </label>
