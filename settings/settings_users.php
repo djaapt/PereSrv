@@ -12,8 +12,7 @@ $ADMIN = check_input($_POST['Admin']);
 ?>
 
 <div id="info">
-<form id='register' action='settings_users.php' method='post' accept-charset='UTF-8'>
-<fieldset>
+<form id='register' action='settings_users.php' method='post'>
 <legend>Register</legend>
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 <label for='FirstName' >First Name*: </label>
@@ -26,12 +25,12 @@ $ADMIN = check_input($_POST['Admin']);
 <input type='password' name='password' id='password' maxlength="50" /><br><br>
 <label for='Email' >Email Address*:</label>
 <input type='text' name='Email' id='Email' maxlength="50" /><br><br>
+<label for='MaxRating' >MaxRating:</label>
 <select name='MaxRating'>
 	<option value="100" selected>All</option>
 </select>
 <input type='checkbox' name='Admin' value="1">Administrator<br><br>
 <input type='submit' name='Submit' value='Submit' />
-</fieldset>
 </form>
 
 <?php
