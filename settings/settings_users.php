@@ -45,6 +45,13 @@ if (isset ($_REQUEST['adding'])) {
 		$USERNAME = check_input($_POST['username'],"Enter Username!");
 		$PASSWORD = check_input(md5($_POST['password']),"Enter Password!");
 		$EMAIL = check_input($_POST['Email'],"Enter Email Address!");
+		$MAXRATING = $_POST['MaxRating'];
+		$ADMIN = $_POST['Admin'];
+		
+		//Build insert statement
+		$QUERY = "insert into $TABLE values(NULL,'$USERNAME','$PASSWORD','$FIRSTNAME','$LASTNAME','$EMAIL','$MaxRating'";
+		echo $QUERY;
+		
 	}
 }
 function check_input($DATA, $ERROR=''){
