@@ -6,7 +6,7 @@ include_once '/media/dbinfo.php';
 
 <div id="info">
 <form name='New User' method='post' action='settings_users.php?adding=1'>
-<legend>Register</legend>
+<legend>Register New User</legend><br>
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 <label for='FirstName' >First Name*: </label>
 <input type='text' name='FirstName' id='FirstName' maxlength="50" /><br><br>
@@ -21,7 +21,7 @@ include_once '/media/dbinfo.php';
 <label for='MaxRating' >MaxRating:</label>
 <select name='MaxRating'>
 	<option value="100" selected>All</option>
-</select>
+</select><br><br>
 <input type='checkbox' name='Admin' value="1">Administrator<br><br>
 <input type='submit' value='Add' />
 </form>
