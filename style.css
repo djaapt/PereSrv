@@ -1,6 +1,7 @@
 body{
 margin: 0;
 background-color: #344152;
+padding-top: 30px;
 }
 #header{
 position:fixed;
@@ -50,7 +51,6 @@ left: 0;
 border: 0;
 height: 100%;
 width: 100%;
-padding-top: 30px;
 }
 .bubble{
     background-color: #c1c1c1;
