@@ -39,7 +39,6 @@ if (isset ($_REQUEST['adding'])) {
 		//Check for duplicate username
 		$QUERY = "select * from $TABLE where username='" . $_POST['username'] . "'";
 		$RESULT = mysqli_query($DBC,$QUERY);
-		echo mysqli_num_rows($RESULT);
 		if (mysqli_num_rows($RESULT) >= 1) {	
 			echo "Please enter another Username";
 			$ERRORNUM = ($ERRORNUM + 1);
@@ -57,8 +56,8 @@ function check_input($DATA, $ERROR=''){
     $DATA = stripslashes($DATA);
     $DATA = htmlspecialchars($DATA);
 	if ($ERROR && strlen($DATA) == 0){
-		die($ERROR);
 		$ERRORNUM = ($ERRORNUM + 1);
+		die($ERROR);
 	}
     return $DATA;
 }
