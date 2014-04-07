@@ -23,7 +23,7 @@ header("location:".BASEURL."/main_login.php");
    <li><a href="<?php BASEURL; ?>/music.php"><span>Music</span></a></li>
    <li><a href='#'><span>Other</span></a></li>
    <li><a href="<?php BASEURL; ?>/settings/settings.php"><span>Settings</span></a></li>
-   <li style="float: right;"><a href="<?php BASEURL; ?>/logout.php"><span>Logout <?php session_is_registered('USER')?></span></a></li>
+   <li style="float: right;"><a href="<?php BASEURL; ?>/logout.php"><span>Logout</span></a></li>
 </ul>
 </div>
 </div>
