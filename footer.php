@@ -1,4 +1,4 @@
-<div id="botbar">write copied!</div>
 </div>
+<div id="botbar">write copied!</div>
 </body>
 </html>
