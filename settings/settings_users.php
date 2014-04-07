@@ -52,8 +52,9 @@ if (isset ($_REQUEST['adding'])) {
 		
 		//Build insert statement
 		$QUERY = "insert into $TABLE values(NULL,'$USERNAME','$PASSWORD','$FIRSTNAME','$LASTNAME','$EMAIL',NULL,NULL)";
-		echo $QUERY;
-		
+		//Add user to DB
+		mysqli_query($DBC,$QUERY);
+		die("User Added to Database");
 	}
 }
 function check_input($DATA, $ERROR=''){
