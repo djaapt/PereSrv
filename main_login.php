@@ -1,9 +1,10 @@
 <?php include_once 'config.php';?>
-<table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+<body bgcolor="#000000">
+<table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#B0B0B0">
 <tr>
 <form name="form1" method="post" action="checklogin.php">
 <td>
-<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
+<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#16C9C9">
 <tr>
 <td colspan="3"><strong>Member Login </strong></td>
 </tr>
@@ -27,3 +28,4 @@
 </form>
 </tr>
 </table>
+</body>
