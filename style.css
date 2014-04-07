@@ -1,6 +1,6 @@
 body{
 margin: 0;
-overflow: hidden;
+;overflow: hidden;
 }
 #header{
 top:0;
@@ -44,7 +44,7 @@ background:transparent url(images/nav_bg.png) 0px -30px no-repeat;
 }
 #info{
 background-color: #344152;
-overflow: hidden;
+;overflow: hidden;
 position: relative;
 top: 0;
 left: 0;
