@@ -2,6 +2,9 @@
 <?php //Include the header - header starts the html and body tags
 include_once '../header.php'; 
 include_once '/media/dbinfo.php';
+//DB connection variable to call later
+$TABLE = "members";
+$DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
 ?>
 
 <div id="info">
@@ -32,8 +35,16 @@ if (isset ($_REQUEST['adding'])) {
 	if ($ADDING == 1) {
 		$FIRSTNAME = check_input($_POST['FirstName'],"Enter First Name!");
 		$LASTNAME = check_input($_POST['LastName'],"Enter Last Name!");
-		$USERNAME = check_input($_POST['username'],"Enter Userame!");
-		$PASSWORD = check_input($_POST['password'],"Enter Password!");
+		//Check for duplicate usernames
+		$QUERY = "SELECT * from $TABLE where ussername='". $_POST['username'] ."'";
+		$GET = mysqli_query($DBC,$QUERY);
+		if (mysql_num_rows($GET) >= 1) {
+			$USERNAME = check_input($_POST['username'],"Username Already exists please pick a diffrent username!");
+		}
+		else {
+		$USERNAME = check_input($_POST['username'],"Enter Username!");
+		}
+		$PASSWORD = check_input(md5($_POST['password']),"Enter Password!");
 		$EMAIL = check_input($_POST['Email'],"Enter Email Address!");
 		$MAXRATING = check_input($_POST['MaxRating']);
 		$ADMIN = check_input($_POST['Admin']);
