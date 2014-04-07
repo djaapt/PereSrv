@@ -20,6 +20,7 @@ include '/media/dbinfo.php';
 
 //DB connection variable to call later
 $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
+$TABLE = tvshow
 
 //Set media directory's 
 $TVSHOWDIR = "Seasons/";
