@@ -21,7 +21,10 @@ include_once '/media/dbinfo.php';
 MaxRating:<select name='MaxRating'>
 	<option value="100" selected>All</option>
 </select><br><br>
-<input type='checkbox' name='Admin' value="1">Administrator<br><br>
+Administrator:<select name='Admin' 
+	<option value="0" selected>No</option>
+	<option value="1">Yes</option>
+</select><br><br>
 <input type='submit' value='Add' />
 </form>
 
