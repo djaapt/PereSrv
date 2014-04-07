@@ -20,7 +20,7 @@ display:block;
 height:30px;
 font-size:12px;
 font-weight:bold;
-background:url(images/nav_bg.png) repeat-x top left;
+background:transparent url(images/nav_bg.png) repeat-x top left;
 font-family:Arial, Helvetica,sans-serif;
 border-bottom:1px solid #000000;
 border-top:1px solid #000000;
