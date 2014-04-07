@@ -36,7 +36,7 @@ if (isset ($_REQUEST['adding'])) {
 		$FIRSTNAME = check_input($_POST['FirstName'],"Enter First Name!");
 		$LASTNAME = check_input($_POST['LastName'],"Enter Last Name!");
 		//Check for duplicate usernames
-		$QUERY = "SELECT * from $TABLE where ussername='". $_POST['username'] ."'";
+		$QUERY = "SELECT * from $TABLE where username='". $_POST['username'] ."'";
 		$GET = mysqli_query($DBC,$QUERY);
 		if (mysql_num_rows($GET) >= 1) {
 			$USERNAME = check_input($_POST['username'],"Username Already exists please pick a diffrent username!");
