@@ -53,6 +53,7 @@ function check_dupUser($DATA){
 		else {
 		$USERNAME = check_input($DATA,"Enter Username!");
 		}
+		return $DATA;
 )
 function check_input($DATA, $ERROR=''){
     $DATA = trim($DATA);
