@@ -2,9 +2,6 @@
 <?php //Include the header - header starts the html and body tags
 include_once '../header.php'; 
 include_once '/media/dbinfo.php';
-//DB connection variable to call later
-$TABLE = "members";
-$DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
 ?>
 
 <div id="info">
@@ -30,6 +27,10 @@ $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Databa
 </form>
 
 <?php
+//DB connection variable to call later
+$TABLE = "members";
+$DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
+
 if (isset ($_REQUEST['adding'])) {
 	$ADDING = $_REQUEST['adding'];
 	if ($ADDING == 1) {
@@ -37,7 +38,7 @@ if (isset ($_REQUEST['adding'])) {
 		$LASTNAME = check_input($_POST['LastName'],"Enter Last Name!");
 		//Check for duplicate usernames
 		$QUERY = "select * from $TABLE where username='" . $_POST['username'] . "'";
-		$RESULT = mysqli_query($DBC,$QUERY) or die ('Unable to select Database');
+		$RESULT = mysqli_query($QUERY);
 		if (mysql_num_rows($RESULT) >= 1) {
 			$USERNAME = check_input($_POST['username'],"Username already exists please pick a different username!");
 		}
