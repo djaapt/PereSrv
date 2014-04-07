@@ -30,6 +30,8 @@ include_once '/media/dbinfo.php';
 //DB connection variable to call later
 $TABLE = "members";
 $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
+//Set error count
+$ERRORNUM = 0;
 
 if (isset ($_REQUEST['adding'])) {
 	$ADDING = $_REQUEST['adding'];
@@ -39,14 +41,15 @@ if (isset ($_REQUEST['adding'])) {
 		$RESULT = mysqli_query($DBC,$QUERY);
 		echo mysqli_num_rows($RESULT);
 		if (mysqli_num_rows($RESULT) >= 1) {	
-			$DUPERROR = "Please enter another Username";
+			echo "Please enter another Username";
+			$ERRORNUM = ($ERRORNUM + 1);
 		}
-		else { $DUPERROR = "Enter Username!";}
 		$FIRSTNAME = check_input($_POST['FirstName'],"Enter First Name!");
 		$LASTNAME = check_input($_POST['LastName'],"Enter Last Name!");
-		$USERNAME = check_input($_POST['username'],$DUPERROR);
+		$USERNAME = check_input($_POST['username'],"Enter Username!");
 		$PASSWORD = check_input(md5($_POST['password']),"Enter Password!");
 		$EMAIL = check_input($_POST['Email'],"Enter Email Address!");
+		echo "Number of errors:".$ERRORNUM;
 	}
 }
 function check_input($DATA, $ERROR=''){
@@ -55,6 +58,7 @@ function check_input($DATA, $ERROR=''){
     $DATA = htmlspecialchars($DATA);
 	if ($ERROR && strlen($DATA) == 0){
 		die($ERROR);
+		$ERRORNUM = ($ERRORNUM + 1);
 	}
     return $DATA;
 }
