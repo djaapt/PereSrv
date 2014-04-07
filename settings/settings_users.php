@@ -35,7 +35,7 @@ if (isset ($_REQUEST['adding'])) {
 	$ADDING = $_REQUEST['adding'];
 	if ($ADDING == 1) {
 		//Check for duplicate username
-		$QUERY = "select * from $TABLE where username='" . htmlspecialchars($_POST['username']) . "'";
+		$QUERY = "select * from $TABLE where username='" . $_POST['username'] . "'";
 		$RESULT = mysqli_query($DBC,$QUERY);
 		if (mysql_num_rows($RESULT) >= 1) {	
 			$DUPERROR = "Please enter another Username";
@@ -46,8 +46,6 @@ if (isset ($_REQUEST['adding'])) {
 		$USERNAME = check_input($_POST['username'],$DUPERROR);
 		$PASSWORD = check_input(md5($_POST['password']),"Enter Password!");
 		$EMAIL = check_input($_POST['Email'],"Enter Email Address!");
-		$MAXRATING = check_input($_POST['MaxRating']);
-		$ADMIN = check_input($_POST['Admin']);
 	}
 }
 function check_input($DATA, $ERROR=''){

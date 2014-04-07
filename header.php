@@ -3,7 +3,7 @@
 // Put this code in first line of web page. 
 include_once 'config.php';
 session_start();
-if(!session_is_registered(USER)){
+if(!session_is_registered('USER')){
 header("location:".BASEURL."/main_login.php");
 }
 ?>
