@@ -51,7 +51,7 @@ if (isset ($_REQUEST['adding'])) {
 		$ADMIN = $_POST['Admin'];
 		
 		//Build insert statement
-		$QUERY = "insert into $TABLE values(NULL,'$USERNAME','$PASSWORD','$FIRSTNAME','$LASTNAME','$EMAIL',NULL,NULL)";
+		$QUERY = "insert into $TABLE values(NULL,'$USERNAME','$PASSWORD','$FIRSTNAME','$LASTNAME','$EMAIL',DEFAULT,DEFAULT)";
 		//Add user to DB
 		mysqli_query($DBC,$QUERY);
 		die("User Added to Database");
