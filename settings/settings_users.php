@@ -18,8 +18,7 @@ include_once '/media/dbinfo.php';
 <input type='password' name='password' id='password' maxlength="50" /><br><br>
 <label for='Email' >Email Address*:</label>
 <input type='text' name='Email' id='Email' maxlength="50" /><br><br>
-<label for='MaxRating' >MaxRating:</label>
-<select name='MaxRating'>
+MaxRating:<select name='MaxRating'>
 	<option value="100" selected>All</option>
 </select><br><br>
 <input type='checkbox' name='Admin' value="1">Administrator<br><br>
@@ -49,7 +48,7 @@ if (isset ($_REQUEST['adding'])) {
 		$ADMIN = $_POST['Admin'];
 		
 		//Build insert statement
-		$QUERY = "insert into $TABLE values(NULL,'$USERNAME','$PASSWORD','$FIRSTNAME','$LASTNAME','$EMAIL','$MaxRating'";
+		$QUERY = "insert into $TABLE values(NULL,'$USERNAME','$PASSWORD','$FIRSTNAME','$LASTNAME','$EMAIL','$MAXRATING','$ADMIN')";
 		echo $QUERY;
 		
 	}
