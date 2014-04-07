@@ -36,10 +36,10 @@ if (isset ($_REQUEST['adding'])) {
 		$FIRSTNAME = check_input($_POST['FirstName'],"Enter First Name!");
 		$LASTNAME = check_input($_POST['LastName'],"Enter Last Name!");
 		//Check for duplicate usernames
-		$QUERY = "SELECT * from $TABLE where username='". $_POST['username'] ."'";
-		$GET = mysqli_query($DBC,$QUERY);
-		if (mysql_num_rows($GET) >= 1) {
-			$USERNAME = check_input($_POST['username'],"Username Already exists please pick a diffrent username!");
+		$QUERY = "select * from $TABLE where username='" . $_POST['username'] . "'";
+		$RESULT = mysqli_query($DBC,$QUERY);
+		if (mysql_num_rows($RESULT) >= 1) {
+			$USERNAME = check_input($_POST['username'],"Username already exists please pick a different username!");
 		}
 		else {
 		$USERNAME = check_input($_POST['username'],"Enter Username!");
@@ -50,13 +50,11 @@ if (isset ($_REQUEST['adding'])) {
 		$ADMIN = check_input($_POST['Admin']);
 	}
 }
-function check_input($DATA, $ERROR='')
-{
+function check_input($DATA, $ERROR=''){
     $DATA = trim($DATA);
     $DATA = stripslashes($DATA);
     $DATA = htmlspecialchars($DATA);
-	if ($ERROR && strlen($DATA) == 0)
-	{
+	if ($ERROR && strlen($DATA) == 0){
 		die($ERROR);
 	}
     return $DATA;
