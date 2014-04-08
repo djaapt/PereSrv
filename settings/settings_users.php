@@ -19,10 +19,10 @@ include_once '/media/dbinfo.php';
 <label for='Email' >Email Address*:</label>
 <input type='text' name='Email' id='Email' maxlength="50" /><br><br>
 MaxRating:<select name='MaxRating'>
-	<option value="100" selected>All</option>
+	<option value="DEFAULT" selected>All</option>
 </select><br><br>
 Administrator:<select name='Admin'> 
-	<option value="0" selected>No</option>
+	<option value="DEFAULT" selected>No</option>
 	<option value="1">Yes</option>
 </select><br><br>
 <input type='submit' value='Add' />
@@ -48,10 +48,11 @@ if (isset ($_REQUEST['adding'])) {
 		$PASSWORD = check_input(md5($_POST['password']),"Enter Password!");
 		$EMAIL = check_input($_POST['Email'],"Enter Email Address!");
 		$MAXRATING = $_POST['MaxRating'];
+		$ACTIVE = 'DEFAULT';
 		$ADMIN = $_POST['Admin'];
 		
 		//Build insert statement
-		$QUERY = "insert into $TABLE values(NULL,'$USERNAME','$PASSWORD','$FIRSTNAME','$LASTNAME','$EMAIL',DEFAULT,DEFAULT)";
+		$QUERY = "insert into $TABLE values(NULL,'$USERNAME','$PASSWORD','$FIRSTNAME','$LASTNAME','$EMAIL','$MAXRATING','$ACTIVE','$ADMIN')";
 		//Add user to DB
 		mysqli_query($DBC,$QUERY);
 		die("User Added to Database");
