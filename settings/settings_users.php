@@ -47,9 +47,9 @@ if (isset ($_REQUEST['adding'])) {
 		$USERNAME = check_input($_POST['username'],"Enter Username!");
 		$PASSWORD = check_input(md5($_POST['password']),"Enter Password!");
 		$EMAIL = check_input($_POST['Email'],"Enter Email Address!");
-		$MAXRATING = $_POST['MaxRating'];
+		$MAXRATING = $_POST[MaxRating];
 		$ACTIVE = 'DEFAULT';
-		$ADMIN = $_POST['Admin'];
+		$ADMIN = $_POST[Admin];
 		
 		//Build insert statement
 		$QUERY = "insert into $TABLE values(NULL,'$USERNAME','$PASSWORD','$FIRSTNAME','$LASTNAME','$EMAIL','$MAXRATING','$ACTIVE','$ADMIN')";
