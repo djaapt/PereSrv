@@ -20,6 +20,7 @@ include_once '/media/dbinfo.php';
 <input type='text' name='Email' id='Email' maxlength="50" /><br><br>
 MaxRating:<select name='MaxRating'>
 	<option value="DEFAULT" selected>All</option>
+	<option value="0">None</option>
 </select><br><br>
 Administrator:<select name='Admin'> 
 	<option value="DEFAULT" selected>No</option>
