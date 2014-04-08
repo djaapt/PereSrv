@@ -24,7 +24,7 @@ if($query_run=mysqli_query($DBC,$query))
     {
         $PATH = "../Videos/".$rows['moviename'];
 		$MOV = $rows['moviename'];
-		$Title = substr(strrchr($MOV, "."), 1);
+		$Title = substr(strrchr($MOV, "."), 0);
 		$IMAGEPATH = "../movieposters/$Title.jpg";
 		//echo '<td style=padding-top: 5px; padding-bottom: 5px;><a href="'.$PATH.'">'.$MOV.'</a></td>';
 		echo '<td style=padding-top: 5px; padding-bottom: 5px;><a href="'.$PATH.'"><img src="'.$IMAGEPATH.'" title="'.$MOV.'" height=140></a></td>';
