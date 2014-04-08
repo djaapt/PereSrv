@@ -27,7 +27,7 @@ if($query_run=mysqli_query($DBC,$query))
 		$eltiT = strrev($MOV);
 		$cuteltiT = strstr ($eltiT, '.');
 		$rev = strrev($cuteltiT);
-		$Title = strstr($rev, '.', true);
+		$Title = substr($rev, 0, -1);
 		$IMAGEPATH = "../movieposters/$Title.jpg";
 		//echo '<td style=padding-top: 5px; padding-bottom: 5px;><a href="'.$PATH.'">'.$MOV.'</a></td>';
 		echo '<td style=padding-top: 5px; padding-bottom: 5px;><a href="'.$PATH.'"><img src="'.$IMAGEPATH.'" title="'.$MOV.'" height=140></a></td>';
