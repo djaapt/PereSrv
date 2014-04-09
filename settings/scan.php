@@ -26,7 +26,7 @@ $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Databa
 $TVSHOWDIR = BASEPATH."/Seasons/";
 
 //Scans the directory and runs it through the clean-up function we created
-$TVFILES = array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST));
+$TVFILES = array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST);
 
 //This one is just for testing, we won't use it in the final version
 echo "Files in the Directory $TVSHOWDIR not showing the excluded list: $EXCLUDE_LIST_PRINTABLE:<br><br>";
