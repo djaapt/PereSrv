@@ -1,7 +1,7 @@
 <body bgcolor="#000000">
 <table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#B0B0B0">
 <tr>
-<form name="form1" method="post" action="main_login.php?login=1">
+<form name="form1" method="post" action="main_login.php?logincheck=1">
 <td>
 <table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#16C9C9">
 <tr>
@@ -28,12 +28,11 @@
 </tr>
 </table>
 <?php
-include_once 'config.php';
 if (isset ($_REQUEST[''])) {
-	$LOGIN = $_REQUEST['login'];
-	if ($LOGIN == 1) {
+	$LOGINCHECK = $_REQUEST['logincheck'];
+	if ($LOGINCHECK == 1) {
 		//Build the connection to SQL server
-		include '/media/dbinfo.php';
+		include_once '/media/dbinfo.php';
 		$TABLE = "members"; // Table name 
 
 		// Connect to server and select databse.
