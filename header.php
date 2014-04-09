@@ -45,7 +45,7 @@ echo '<li><a href="<?php BASEPATH; ?>/movies.php"><span>Movies</span></a></li>';
 echo '<li><a href="<?php BASEPATH; ?>/shows.php"><span>TVShows</span></a></li>';
 echo '<li><a href="<?php BASEPATH; ?>/music.php"><span>Music</span></a></li>';
 echo '<li><a href='#'><span>Other</span></a></li>';
-echo '<li><a href="<?php BASEPATH; ?>/settings/settings.php"><span>Settings</span></a></li>';
+//echo '<li><a href="<?php BASEPATH; ?>/settings/settings.php"><span>Settings</span></a></li>';
 echo '<li style="float: right;"><a href="<?php BASEPATH; ?>/logout.php"><span>Logout</span></a></li>';
 echo '</ul>';
 }
