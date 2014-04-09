@@ -40,7 +40,7 @@ while($row = $result->fetch_assoc()){
 }
 if($var==1) {
 echo '<ul>';
-echo '<li class='active'><a href="<?php BASEPATH; ?>/index.php"><span>Home</span></a></li>';
+echo '<li class="active"><a href="<?php BASEPATH; ?>/index.php"><span>Home</span></a></li>';
 echo '<li><a href="<?php BASEPATH; ?>/movies.php"><span>Movies</span></a></li>';
 echo '<li><a href="<?php BASEPATH; ?>/shows.php"><span>TVShows</span></a></li>';
 echo '<li><a href="<?php BASEPATH; ?>/music.php"><span>Music</span></a></li>';
@@ -51,7 +51,7 @@ echo '</ul>';
 }
 else{
 echo '<ul>';
-echo '<li class='active'><a href="<?php BASEPATH; ?>/index.php"><span>Home</span></a></li>';
+echo '<li class="active"><a href="<?php BASEPATH; ?>/index.php"><span>Home</span></a></li>';
 echo '<li><a href="<?php BASEPATH; ?>/movies.php"><span>Movies</span></a></li>';
 echo '<li><a href="<?php BASEPATH; ?>/shows.php"><span>TVShows</span></a></li>';
 echo '<li><a href="<?php BASEPATH; ?>/music.php"><span>Music</span></a></li>';
