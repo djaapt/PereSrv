@@ -1,4 +1,3 @@
-<?php include_once 'config.php';?>
 <body bgcolor="#000000">
 <table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#B0B0B0">
 <tr>
@@ -11,12 +10,12 @@
 <tr>
 <td width="78">Username</td>
 <td width="6">:</td>
-<td width="294"><input name="USER" type="text" id="USER"></td>
+<td width="294"><input name="USERNAME" type="text" id="USERNAME"></td>
 </tr>
 <tr>
 <td>Password</td>
 <td>:</td>
-<td><input name="PASS" type="password" id="PASS"></td>
+<td><input name="PASSWORD" type="password" id="PASSWORD"></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
@@ -29,6 +28,7 @@
 </tr>
 </table>
 <?php
+include_once 'config.php';
 if (isset ($_REQUEST[''])) {
 	$LOGIN = $_REQUEST['login'];
 	if ($LOGIN == 1) {
@@ -41,28 +41,28 @@ if (isset ($_REQUEST[''])) {
 		mysql_select_db("$DBASE")or die("cannot select DB");
 
 		// username and password sent from form 
-		$USER=$_POST['USER']; 
-		$PASS=$_POST['PASS']; 
+		$USERNAME=$_POST['USERNAME']; 
+		$PASSWORD=$_POST['PASSWORD']; 
 
 		// To protect MySQL injection (more detail about MySQL injection)
-		$USER = stripslashes($USER);
-		$PASS = stripslashes($PASS);
-		$USER = mysql_real_escape_string($USER);
-		$PASS = mysql_real_escape_string($PASS);
-		$PASS = md5($PASS);
-		$SQL="SELECT * FROM $TABLE WHERE username='$USER' and password='$PASS'";
+		$USERNAME = stripslashes($USERNAME);
+		$PASSWORD = stripslashes($PASSWORD);
+		$USERNAME = mysql_real_escape_string($USERNAME);
+		$PASSWORD = mysql_real_escape_string($PASSWORD);
+		$PASSWORD = md5($PASSWORD);
+		$SQL="SELECT * FROM $TABLE WHERE username='$USERNAME' and password='$PASSWORD'";
 		$result=mysql_query($SQL);
 
 		// Mysql_num_row is counting table row
 		$count=mysql_num_rows($result);
 
-		// If result matched $USER and $PASS, table row must be 1 row
+		// If result matched $USERNAME and $PASSWORD, table row must be 1 row
 		if($count==1){
-			// Register $USER, $PASS and redirect to file "index.php"
+			// Register $USERNAME, $PASSWORD and redirect to file "index.php"
 			session_start();
-			$_SESSION['username'] = $USER;
-			session_register("USER"); 
-			session_register("PASS"); 
+			$_SESSION['username'] = $USERNAME;
+			session_register("USERNAME"); 
+			session_register("PASSWORD"); 
 			header("location:index.php");
 		}
 		else {
