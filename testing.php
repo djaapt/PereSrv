@@ -5,7 +5,6 @@ include_once 'header.php'; ?>
 <?php 
 $ses_id = session_id(); 
 echo $ses_id;
- } 
 ?>
 
 <?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
