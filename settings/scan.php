@@ -23,7 +23,7 @@ $TABLE = "tvshow";
 $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
 
 //Set media directory's 
-$TVSHOWDIR = "Seasons/";
+$TVSHOWDIR = BASEPATH."Seasons/";
 
 //Scans the directory and runs it through the clean-up function we created
 $TVFILES = clean_up(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST));
