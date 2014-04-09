@@ -6,9 +6,8 @@ PereSrv Configuration File
 define('BASEPATH', dirname(__FILE__));
 
 /*Define website with DO NOT ADD trailing / Use to reference the root location for website access do not use for media file location
-Make sure you have http:// or https://
-Examples: http://example.com
-https://media.test.com
+Examples: example.com
+media.test.com
 */
-define('BASEURL', 'https://djaapt.com:8443');
+define('BASEURL', 'djaapt.com:8443');
 ?>
