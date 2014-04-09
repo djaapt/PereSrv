@@ -13,10 +13,8 @@ $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Databa
 
 $QUERY="SELECT * FROM $TABLE where username=$username";
 $GET = mysqli_query($DBC,$QUERY);
-while ($ROW = mysqli_fetch_array($GET))
-{
-$ID = $ROW['ID'];
-echo $ID;
+while($ROW = mysqli_fetch_array($GET)){
+echo '$ROW';
 }
 ?>
 
