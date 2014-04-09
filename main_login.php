@@ -28,7 +28,6 @@
 </tr>
 </table>
 <?php
-$error = "<font color=\"#16C9C9\">Wrong Username or Password</font>";
 //Build the connection to SQL server
 include_once '/media/dbinfo.php';
 $TABLE = "members"; // Table name 
@@ -61,6 +60,9 @@ if($count==1){
 	session_register("USERNAME"); 
 	session_register("PASSWORD"); 
 	header("location:index.php");
+}
+else {
+	$error = "<font color=\"#16C9C9\">Wrong Username or Password</font>";
 }
 if(isset($error)) {
     echo $error;
