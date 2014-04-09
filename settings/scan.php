@@ -12,7 +12,7 @@ $EXCLUDE_LIST_PRINTABLE = implode(", ", $EXCLUDE_LIST);
 function clean_up($TEXT){
 	//Add any other characters to be removed inside the array
 	//$FIXAPOSTROPHE = array("'",);
-	return htmlspecialchars($TEXT);
+	return mysqli_real_eascape_string($TEXT);
 }
 
 //Build the connection to SQL server
