@@ -66,9 +66,9 @@ if (isset ($_REQUEST[''])) {
 		session_register("PASS"); 
 		header("location:index.php");
 		}
-	}
-	else {
-		echo "<font color=\"#16C9C9\">Wrong Username or Password</font>";
+		else {
+			echo "<font color=\"#16C9C9\">Wrong Username or Password</font>";
+		}
 	}
 }
 ?>
