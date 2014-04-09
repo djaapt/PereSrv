@@ -1,7 +1,12 @@
-<?php
-header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
-header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<?php //Include the header - header starts the html and body tags
+include_once 'header.php'; ?>
 
-system('/usr/bin/ffmpeg -i /var/www/PereSrv/Videos/Brave.2012.mp4 -f webm  -vcodec libvpx -acodec libvorbis -aq 90 -ac 2 /var/www/PereSrv/stream.m3u8');
-
+<?php 
+$ses_id = session_id(); 
+echo $ses_id;
+ } 
 ?>
+
+<?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
+include_once 'footer.php'; ?>
