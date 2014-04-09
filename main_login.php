@@ -66,7 +66,6 @@ if (isset ($_REQUEST[''])) {
 		}
 		else {
 			echo "<font color=\"#16C9C9\">Wrong Username or Password</font>";
-			header("location:main_login.php");
 		}
 	}
 }
