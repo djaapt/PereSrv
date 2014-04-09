@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['Submit'] && $_POST['Submit']=='Login')) {
+if(isset($_POST['Submit']) && $_POST['Submit']=='Login') {
 	//Build the connection to SQL server
 	include_once '/media/dbinfo.php';
 	$TABLE = "members"; // Table name 
