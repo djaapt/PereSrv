@@ -5,8 +5,6 @@ include_once 'header.php'; ?>
 <?php
 //Build the connection to SQL server
 include '/media/dbinfo.php';
-
-session_start();
 $username = $_SESSION['username'];
 
 //DB connection variable to call later
@@ -14,8 +12,8 @@ $TABLE = "members";
 $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
 
 $query="SELECT * FROM $TABLE where username=$username";
-$query_run=mysqli_query($DBC,$query);
-echo $query_run;
+$GET = mysqli_query($DBC,$QUERY);
+echo $GET;
 ?>
 
 <?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
