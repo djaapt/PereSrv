@@ -27,7 +27,7 @@ $count=mysql_num_rows($result);
 // If result matched $USER and $PASS, table row must be 1 row
 if($count==1){
 
-// Register $USER, $PASS and redirect to file "login_success.php"
+// Register $USER, $PASS and redirect to file "index.php"
 session_register("USER");
 session_register("PASS"); 
 header("location:index.php");
