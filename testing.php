@@ -6,7 +6,6 @@ include_once 'header.php'; ?>
 //Build the connection to SQL server
 include '/media/dbinfo.php';
 $username = $_SESSION['username'];
-echo $username;
 //DB connection variable to call later
 $db = new mysqli($HOST,$USER,$PASS,$DBASE);
 if($db->connect_errno > 0){
