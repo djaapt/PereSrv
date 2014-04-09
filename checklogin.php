@@ -1,3 +1,4 @@
+<body bgcolor="#000000">
 <?php
 include_once 'config.php';
 //Build the connection to SQL server
@@ -35,6 +36,6 @@ session_register("PASS");
 header("location:index.php");
 }
 else {
-echo "Wrong Username or Password";
+echo "<font color=\"blue\">Wrong Username or Password</font>";
 }
 ?>
