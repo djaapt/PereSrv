@@ -32,6 +32,7 @@ if(isset($_POST['Submit']) && $_POST['Submit']=='Login') {
 		session_register("USERNAME"); 
 		session_register("PASSWORD"); 
 		header('location:index.php');
+		exit;
 	}
 	else {
 		echo "<font color=\"#16C9C9\">Wrong Username or Password</font>";
