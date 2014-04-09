@@ -92,4 +92,4 @@ else
 ?>
 
 <?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
-include BASEURL.'/footer.php'; ?>
+include BASEPATH.'/footer.php'; ?>
