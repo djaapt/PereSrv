@@ -28,44 +28,46 @@
 </tr>
 </table>
 <?php
-//Build the connection to SQL server
-include_once '/media/dbinfo.php';
-$TABLE = "members"; // Table name 
+if(isset($_POST['submit'])) {
+	//Build the connection to SQL server
+	include_once '/media/dbinfo.php';
+	$TABLE = "members"; // Table name 
 
-// Connect to server and select databse.
-mysql_connect("$HOST", "$USER", "$PASS")or die("cannot connect"); 
-mysql_select_db("$DBASE")or die("cannot select DB");
+	// Connect to server and select databse.
+	mysql_connect("$HOST", "$USER", "$PASS")or die("cannot connect"); 
+	mysql_select_db("$DBASE")or die("cannot select DB");
 
-// username and password sent from form 
-$USERNAME=$_POST['USERNAME']; 
-$PASSWORD=$_POST['PASSWORD']; 
+	// username and password sent from form 
+	$USERNAME=$_POST['USERNAME']; 
+	$PASSWORD=$_POST['PASSWORD']; 
 
-// To protect MySQL injection (more detail about MySQL injection)
-$USERNAME = stripslashes($USERNAME);
-$PASSWORD = stripslashes($PASSWORD);
-$USERNAME = mysql_real_escape_string($USERNAME);
-$PASSWORD = mysql_real_escape_string($PASSWORD);
-$PASSWORD = md5($PASSWORD);
-$SQL="SELECT * FROM $TABLE WHERE username='$USERNAME' and password='$PASSWORD'";
-$result=mysql_query($SQL);
+	// To protect MySQL injection (more detail about MySQL injection)
+	$USERNAME = stripslashes($USERNAME);
+	$PASSWORD = stripslashes($PASSWORD);
+	$USERNAME = mysql_real_escape_string($USERNAME);
+	$PASSWORD = mysql_real_escape_string($PASSWORD);
+	$PASSWORD = md5($PASSWORD);
+	$SQL="SELECT * FROM $TABLE WHERE username='$USERNAME' and password='$PASSWORD'";
+	$result=mysql_query($SQL);
 
-// Mysql_num_row is counting table row
-$count=mysql_num_rows($result);
+	// Mysql_num_row is counting table row
+	$count=mysql_num_rows($result);
 
-// If result matched $USERNAME and $PASSWORD, table row must be 1 row
-if($count==1){
-	// Register $USERNAME, $PASSWORD and redirect to file "index.php"
-	session_start();
-	$_SESSION['username'] = $USERNAME;
-	session_register("USERNAME"); 
-	session_register("PASSWORD"); 
-	header("location:index.php");
-}
-else {
-	$error = "<font color=\"#16C9C9\">Wrong Username or Password</font>";
-}
-if(isset($error)) {
-    echo $error;
+	// If result matched $USERNAME and $PASSWORD, table row must be 1 row
+	if($count==1){
+		// Register $USERNAME, $PASSWORD and redirect to file "index.php"
+		session_start();
+		$_SESSION['username'] = $USERNAME;
+		session_register("USERNAME"); 
+		session_register("PASSWORD"); 
+		header("location:index.php");
+	}
+	else {
+		$error = "<font color=\"#16C9C9\">Wrong Username or Password</font>";
+	}
+	if(isset($error)) {
+		echo $error;
+	}
 }
 ?>
 </body>
