@@ -3,8 +3,8 @@
 include_once 'header.php'; ?>
 
 <?php 
-$ses_id = session_id(); 
-echo $ses_id;
+session_start();
+echo $_SESSION['username'];
 ?>
 
 <?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
