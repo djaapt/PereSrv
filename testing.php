@@ -23,11 +23,14 @@ if(!$result = $db->query($sql)){
     die('There was an error running the query [' . $db->error . ']');
 }
 while($row = $result->fetch_assoc()){
-    echo $row['Admin'] . '<br />';
+	$var = $row['Admin'];
 }
-?>
-<?php
-echo 'Total results: ' . $result->num_rows;
+if($var = 1) {
+echo "You are an Admin... Remember with great power comes great responsibility";
+}
+else{
+echo "You are not an Admin... you poor poor thing"
+}
 ?>
 
 <?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
