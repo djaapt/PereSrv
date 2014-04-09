@@ -11,7 +11,7 @@ $username = $_SESSION['username'];
 $TABLE = "members";
 $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
 
-$query="SELECT * FROM $TABLE where username=$username";
+$QUERY="SELECT * FROM $TABLE where username=$username";
 $GET = mysqli_query($DBC,$QUERY);
 echo $GET;
 ?>
