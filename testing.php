@@ -13,8 +13,11 @@ $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Databa
 
 $QUERY="SELECT * FROM $TABLE where username=$username";
 $GET = mysqli_query($DBC,$QUERY);
-$ROW = mysqli_fetch_array($GET);
-echo $ROW;
+while ($ROW = mysqli_fetch_array($GET))
+{
+$ID = $ROW['ID'];
+echo $ID;
+}
 ?>
 
 <?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
