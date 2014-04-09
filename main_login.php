@@ -61,6 +61,7 @@ if(isset($_POST['Submit'])) {
 		session_register("USERNAME"); 
 		session_register("PASSWORD"); 
 		header('location: index.php');
+		echo "<font color=\"#16C9C9\">Correct Username and Password</font>";
 	}
 	else {
 		echo "<font color=\"#16C9C9\">Wrong Username or Password</font>";
