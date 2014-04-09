@@ -26,11 +26,11 @@ $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Databa
 $TVSHOWDIR = BASEPATH."/Seasons/";
 
 //Scans the directory and runs it through the clean-up function we created
-$TVFILES = clean_up(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST));
+$TVFILES = array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST));
 
 //This one is just for testing, we won't use it in the final version
 echo "Files in the Directory $TVSHOWDIR not showing the excluded list: $EXCLUDE_LIST_PRINTABLE:<br><br>";
-$TVFILES1 = implode(", ", clean_up(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST)));
+$TVFILES1 = implode(", ", array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST));
 
 //Print results from the test array
 echo "$TVFILES1";
@@ -74,7 +74,7 @@ if (empty($REMOVEDUPS)) {
 
 	//Execute your query and print the error message if there is one
 	//If Error querying database. is not printed it was successful
-	mysqli_query($DBC, $TVQUERY) or die('Error querying database.');
+	mysqli_real_eascape_string($DBC, $TVQUERY) or die('Error querying database.');
 
 	//Close Database connection
 	mysqli_close($DBC);
