@@ -25,7 +25,7 @@ if(!$result = $db->query($sql)){
 while($row = $result->fetch_assoc()){
 	$var = $row['Admin'];
 }
-if($var = 1) {
+if($var==1) {
 echo "You are an Admin... Remember with great power comes great responsibility";
 }
 else{
