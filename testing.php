@@ -30,7 +30,7 @@ echo "You are an Admin... Remember with great power comes great responsibility";
 else{
 echo "You are not an Admin... you poor poor thing";
 }
-echo $BASEPATH;
+echo BASEPATH;
 ?>
 
 <?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
