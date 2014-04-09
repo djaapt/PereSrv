@@ -28,7 +28,7 @@
 </tr>
 </table>
 <?php
-if(isset($_POST['Login'])) {
+if(isset($_POST['Submit'])) {
 	//Build the connection to SQL server
 	include_once '/media/dbinfo.php';
 	$TABLE = "members"; // Table name 
