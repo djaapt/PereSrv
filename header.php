@@ -40,7 +40,7 @@ while($row = $result->fetch_assoc()){
 }
 if($var==1) {
 echo '<ul>';
-echo '<li class="active"><a href=index.php><span>Home</span></a></li>';
+echo '<li class="active"><a href=BASEPATH/index.php><span>Home</span></a></li>';
 echo '<li><a href=movies.php><span>Movies</span></a></li>';
 echo '<li><a href=shows.php><span>TVShows</span></a></li>';
 echo '<li><a href=music.php><span>Music</span></a></li>';
