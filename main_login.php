@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['Submit'])) {
+if(isset($_POST['Submit'] && $_POST['Submit']=='Login')) {
 	//Build the connection to SQL server
 	include_once '/media/dbinfo.php';
 	$TABLE = "members"; // Table name 
@@ -31,7 +31,7 @@ if(isset($_POST['Submit'])) {
 		$_SESSION['username'] = $USERNAME;
 		session_register("USERNAME"); 
 		session_register("PASSWORD"); 
-		header('location: https://djaapt.com:8443/index.php');
+		header('location:index.php');
 	}
 	else {
 		echo "<font color=\"#16C9C9\">Wrong Username or Password</font>";
