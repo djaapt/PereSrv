@@ -29,7 +29,7 @@ if($var = 1) {
 echo "You are an Admin... Remember with great power comes great responsibility";
 }
 else{
-echo "You are not an Admin... you poor poor thing"
+echo "You are not an Admin... you poor poor thing";
 }
 ?>
 
