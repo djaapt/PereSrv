@@ -36,6 +36,6 @@ session_register("PASS");
 header("location:index.php");
 }
 else {
-echo "<font color=\"blue\">Wrong Username or Password</font>";
+echo "<font color=\"#16C9C9\">Wrong Username or Password</font>";
 }
 ?>
