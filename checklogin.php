@@ -28,8 +28,9 @@ $count=mysql_num_rows($result);
 if($count==1){
 
 // Register $USER, $PASS and redirect to file "index.php"
-session_register("USER");
-session_register("PASS"); 
+session_start();
+$_SESSION['username'] = $USER;
+//session_register("PASS"); 
 header("location:index.php");
 }
 else {
