@@ -35,7 +35,7 @@ if(isset($_POST['Submit']) && $_POST['Submit']=='Login') {
 		exit;
 	}
 	else {
-		$error = "<font color=\"red\">Wrong Username or Password</font>";
+		$error = "<font color=\"#16C9C9\">Wrong Username or Password</font>";
 	}
 }
 ?>
