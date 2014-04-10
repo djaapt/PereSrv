@@ -10,8 +10,8 @@ header("location:main_login.php");
 <html>
 <head>
 <title>peresrv</title>
-<link rel="icon" type="image/png" href="<?php BASEPATH; ?>/images/favicon.png">
-<link href="<?php BASEPATH; ?>/style.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link href="/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id="header">
@@ -40,23 +40,23 @@ while($row = $result->fetch_assoc()){
 }
 if($var==1) {
 echo '<ul>';
-echo '<li class="active"><a href="<?php BASEPATH; ?>/index.php"><span>Home</span></a></li>';
-echo '<li><a href="<?php BASEPATH; ?>/movies.php"><span>Movies</span></a></li>';
-echo '<li><a href="<?php BASEPATH; ?>/shows.php"><span>TVShows</span></a></li>';
-echo '<li><a href="<?php BASEPATH; ?>/music.php"><span>Music</span></a></li>';
+echo '<li class="active"><a href="/index.php"><span>Home</span></a></li>';
+echo '<li><a href="/movies.php"><span>Movies</span></a></li>';
+echo '<li><a href="/shows.php"><span>TVShows</span></a></li>';
+echo '<li><a href="/music.php"><span>Music</span></a></li>';
 echo '<li><a href="#"><span>Other</span></a></li>';
-echo '<li><a href="<?php BASEPATH; ?>/settings/settings.php"><span>Settings</span></a></li>';
-echo '<li style="float: right;"><a href="<?php BASEPATH; ?>/logout.php"><span>Logout</span></a></li>';
+echo '<li><a href="/settings/settings.php"><span>Settings</span></a></li>';
+echo '<li style="float: right;"><a href="/logout.php"><span>Logout</span></a></li>';
 echo '</ul>';
 }
 else{
 echo '<ul>';
-echo '<li class="active"><a href="<?php BASEPATH; ?>/index.php"><span>Home</span></a></li>';
-echo '<li><a href="<?php BASEPATH; ?>/movies.php"><span>Movies</span></a></li>';
-echo '<li><a href="<?php BASEPATH; ?>/shows.php"><span>TVShows</span></a></li>';
-echo '<li><a href="<?php BASEPATH; ?>/music.php"><span>Music</span></a></li>';
+echo '<li class="active"><a href="/index.php"><span>Home</span></a></li>';
+echo '<li><a href="/movies.php"><span>Movies</span></a></li>';
+echo '<li><a href="/shows.php"><span>TVShows</span></a></li>';
+echo '<li><a href="/music.php"><span>Music</span></a></li>';
 echo '<li><a href="#"><span>Other</span></a></li>';
-echo '<li style="float: right;"><a href="<?php BASEPATH; ?>/logout.php"><span>Logout</span></a></li>';
+echo '<li style="float: right;"><a href="/logout.php"><span>Logout</span></a></li>';
 echo '</ul>';
 }
 ?>
