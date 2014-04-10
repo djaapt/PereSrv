@@ -58,16 +58,15 @@ if(isset($_POST['Submit']) && $_POST['Submit']=='Login') {
 <td>:</td>
 <td><input name="PASSWORD" type="password" id="PASSWORD"></td>
 </tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
 <?php if($error){ 
 	echo '<tr>';
 	echo "<td colspan='3'>$error</td>";
-	echo '<td>&nbsp;</td>';
 	echo '</tr>';
 	} 
 ?>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
 <td><input type="submit" name="Submit" value="Login"></td>
 </tr>
 </table>
