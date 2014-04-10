@@ -62,7 +62,7 @@ if(isset($_POST['Submit']) && $_POST['Submit']=='Login') {
 <td>&nbsp;</td>
 <td>&nbsp;</td>
 <?php if($error){ 
-	echo '<td>'.$error.'</td>';
+	echo '<tr>'.$error.'</tr>';
 	echo '<td>&nbsp;</td>';
 	echo '<td>&nbsp;</td>'; 
 	} 
