@@ -44,7 +44,7 @@ while($ROW = mysqli_fetch_array($DUPRESULT)) {
 }
 $EXISTINGSHOWNAME = array();
 foreach($ROWS as $ROW) {
-	$EXISTINGSHOWNAME[] = mysql_real_escape_string($ROW['showname']);
+	$EXISTINGSHOWNAME[] = htmlspecialchars($ROW['showname']);
 }
 $RESULT1 = implode(", ",$EXISTINGSHOWNAME);
 
