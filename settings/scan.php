@@ -68,13 +68,13 @@ if (empty($REMOVEDUPS)) {
 	//Build the query your going to use
 	$TVQUERY = "INSERT INTO $TABLE";
 	//Comma separates each value and add single quotes(') around each value
-	$TVQUERY .= " VALUES (NULL,'".implode("'),(NULL,'", $REMOVEDUPS)."') ";
+	$TVQUERY .= " VALUES (NULL,'".implode("'),(NULL,'", mysql_real_escape_string($REMOVEDUPS))."') ";
 	//Print the query
 	echo $TVQUERY;
 
 	//Execute your query and print the error message if there is one
 	//If Error querying database. is not printed it was successful
-	mysqli_real_eascape_string($DBC, $TVQUERY) or die('Error querying database.');
+	mysqli_query($DBC, $TVQUERY) or die('Error querying database.');
 
 	//Close Database connection
 	mysqli_close($DBC);
