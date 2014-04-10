@@ -4,20 +4,19 @@
 include_once 'config.php';
 session_start();
 if(!session_is_registered('USERNAME')){
-header("location:<?php BASEURL; ?>/main_login.php");
+header("location:<?php BASEPATH; ?>/main_login.php");
 }
 ?>
 <html>
 <head>
 <title>peresrv</title>
-<link rel="icon" type="image/png" href="<?php BASEURL; ?>/images/favicon.png">
-<link href="<?php BASEURL; ?>/style.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="<?php BASEPATH; ?>/images/favicon.png">
+<link href="<?php BASEPATH; ?>/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id="header">
 <div id='cssmenu'>
 <?php
-$BASEPATH = BASEPATH;
 //Build the connection to SQL server
 include '/media/dbinfo.php';
 $username = $_SESSION['username'];
@@ -41,7 +40,7 @@ while($row = $result->fetch_assoc()){
 }
 if($var==1) {
 echo '<ul>';
-echo '<li class="active"><a href="<?php BASEURL; ?>/index.php"><span>Home</span></a></li>';
+echo '<li class="active"><a href="<?php BASEPATH; ?>/index.php"><span>Home</span></a></li>';
 echo '<li><a href="'.BASEURL.'/movies.php"><span>Movies</span></a></li>';
 echo '<li><a href="'.BASEURL.'/shows.php"><span>TVShows</span></a></li>';
 echo '<li><a href="'.BASEURL.'/music.php"><span>Music</span></a></li>';
