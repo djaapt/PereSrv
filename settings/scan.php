@@ -73,11 +73,12 @@ if (empty($REMOVEDUPS)) {
 } else {
 	$DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
 	echo implode(",",$REMOVEDUPS);
+	$REMOVEDUPS = str_replace(',','\\\,',$REMOVEDUPS);
 	echo "<br><br>";
 	//Build the query your going to use
 	$TVQUERY = "INSERT INTO $TABLE";
 	//Comma separates each value and add single quotes(') around each value
-	$TVQUERY .= " VALUES (NULL,".implode("),(NULL,", str_replace(',','\\\,',$REMOVEDUPS)).") ";
+	$TVQUERY .= " VALUES (NULL,".implode("),(NULL,", $REMOVEDUPS).") ";
 	//Print the query
 	echo $TVQUERY;
 
