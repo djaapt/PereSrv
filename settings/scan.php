@@ -9,8 +9,10 @@ Back To Settings: <a href="settings.php"><span>Settings</span></a><br><br>
 $EXCLUDE_LIST = array(".","..",".htaccess","index.php","fileNice");
 $EXCLUDE_LIST_PRINTABLE = implode(", ", $EXCLUDE_LIST);
 //Unwanted characters in query for later
-function clean_up($TEXT){
-	return mysql_real_escape_string($TEXT);
+function clean_up( $TEXT ){
+	//Add any other characters to be removed inside the array
+	$FIXAPOSTROPHE = array("'",);
+	return str_ireplace($FIXAPOSTROPHE, "''", $TEXT);
 }
 
 //Build the connection to SQL server
@@ -24,11 +26,11 @@ $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Databa
 $TVSHOWDIR = "/Seasons/";
 
 //Scans the directory and runs it through the clean-up function we created
-$TVFILES = array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST);
+$TVFILES = clean_up(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST));
 
 //This one is just for testing, we won't use it in the final version
 echo "Files in the Directory $TVSHOWDIR not showing the excluded list: $EXCLUDE_LIST_PRINTABLE:<br><br>";
-$TVFILES1 = implode(", ", array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST));
+$TVFILES1 = implode(", ", clean_up(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST)));
 
 //Print results from the test array
 echo "$TVFILES1";
@@ -66,7 +68,7 @@ if (empty($REMOVEDUPS)) {
 	//Build the query your going to use
 	$TVQUERY = "INSERT INTO $TABLE";
 	//Comma separates each value and add single quotes(') around each value
-	$TVQUERY .= " VALUES (NULL,'".implode("'),(NULL,'", mysql_real_escape_string($REMOVEDUPS))."') ";
+	$TVQUERY .= " VALUES (NULL,'".implode("'),(NULL,'", $REMOVEDUPS)."') ";
 	//Print the query
 	echo $TVQUERY;
 
