@@ -90,9 +90,9 @@ if (empty($REMOVEDUPS)) {
 	$TEST1 = explode(",", $TEST);
 	$TVQUERYTEST = " VALUES (NULL,".implode("),(NULL,", $TEST1).") ";
 	//Print the query
-	echo $TEST."<br>";
-	echo "TEST1".implode(",",$TEST1)."<br>";
-	echo $TVQUERYTEST."<br><br>";
+	//echo $TEST."<br>";
+	//echo "TEST1".implode(",",$TEST1)."<br>";
+	//echo $TVQUERYTEST."<br><br>";
 	echo $TVQUERY;
 
 	//Execute your query and print the error message if there is one
