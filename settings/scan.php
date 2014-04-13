@@ -24,6 +24,12 @@ function addslashesFull($input)
     }
     return $input;
 }
+//Escape commas
+function clean_up( $TEXT ){
+	$FIND = array(",");
+	$REPLACE = array("\\,");
+	return str_ireplace($FIND, $REPLACE, $TEXT);
+}
 //Build the connection to SQL server
 include '/media/dbinfo.php';
 
@@ -78,7 +84,7 @@ if (empty($REMOVEDUPS)) {
 	$TVQUERY = "INSERT INTO $TABLE";
 	//Comma separates each value and add single quotes(') around each value
 	$TVQUERY .= " VALUES (NULL,".implode("),(NULL,", $REMOVEDUPS).") ";
-	$REMOVEDUPS = str_replace(',','.',$REMOVEDUPS);
+	clean_up($REMOVEDUPS);
 	$TEST = "(NULL,".implode("TEST,",$REMOVEDUPS).") ";
 	//Print the query
 	echo $TEST."<br>";
