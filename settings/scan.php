@@ -41,11 +41,11 @@ $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Databa
 $TVSHOWDIR = "../Seasons/";
 
 //Scans the directory and runs it through the clean-up function we created
-$TVFILES = "'".addslashesFull(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST))."'";
+$TVFILES = "'".clean_up(addslashesFull(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST)))."'";
 
 //This one is just for testing, we won't use it in the final version
 echo "Files in the Directory $TVSHOWDIR not showing the excluded list: $EXCLUDE_LIST_PRINTABLE:<br><br>";
-$TVFILES1 = "'".implode("', '", addslashesFull(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST)))."'";
+$TVFILES1 = "'".implode("', '", clean_up(addslashesFull(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST))))."'";
 
 //Print results from the test array
 echo "$TVFILES1";
@@ -63,7 +63,7 @@ $EXISTINGSHOWNAME = array();
 foreach($ROWS as $ROW) {
 	$EXISTINGSHOWNAME[] = $ROW['showname'];
 }
-$RESULT1 = "'".implode("', '",addslashesFull($EXISTINGSHOWNAME))."'";
+$RESULT1 = "'".implode("', '",clean_up(addslashesFull($EXISTINGSHOWNAME)))."'";
 
 echo "<br><br><br>Data That is currently in the MYSQL DB:<br><br>";
 echo $RESULT1;
@@ -79,8 +79,8 @@ if (empty($REMOVEDUPS)) {
 } else {
 	$DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
 	echo implode(",",$REMOVEDUPS);
-	$REMOVEDUPS = clean_up(implode(",",$REMOVEDUPS));
-	$REMOVEDUPS = explode(",", $REMOVEDUPS);
+	//$REMOVEDUPS = clean_up(implode(",",$REMOVEDUPS));
+	//$REMOVEDUPS = explode(",", $REMOVEDUPS);
 	echo "<br><br>";
 	//Build the query your going to use
 	$TVQUERY = "INSERT INTO $TABLE";
