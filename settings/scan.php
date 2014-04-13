@@ -24,7 +24,7 @@ function addslashesFull($input)
     }
     return $input;
 }
-//Escape commas
+//Escape commas then fix the array. Can add more to this if we need to clean other things up
 function clean_up( $TEXT ){
 	$FIND = array(',','\'&#44;\'');
 	$REPLACE = array("&#44;","','");
@@ -40,11 +40,12 @@ $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Databa
 //Set media directory's 
 $TVSHOWDIR = "../Seasons/";
 
-//Scans the directory and runs it through the clean-up function we created
+//Scans the directory and runs it through the clean_up and addslashesFull functions we created
 $TVFILES = "'".clean_up(addslashesFull(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST)))."'";
 
 //This one is just for testing, we won't use it in the final version
 echo "Files in the Directory $TVSHOWDIR not showing the excluded list: $EXCLUDE_LIST_PRINTABLE:<br><br>";
+//We need this part for the final version as it builds our comparison list
 $TVFILES1 = "'".implode("', '", clean_up(addslashesFull(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST))))."'";
 
 //Print results from the test array
@@ -82,7 +83,7 @@ if (empty($REMOVEDUPS)) {
 	echo "<br><br>";
 	//Build the query your going to use
 	$TVQUERY = "INSERT INTO $TABLE";
-	//Comma separates each value and add single quotes(') around each value
+	//Comma separates each value and adds the required syntax for insert around each value
 	$TVQUERY .= " VALUES (NULL,".implode("),(NULL,", $REMOVEDUPS).") ";
 
 	echo $TVQUERY;
