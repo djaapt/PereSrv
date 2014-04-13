@@ -57,7 +57,7 @@ $EXISTINGSHOWNAME = array();
 foreach($ROWS as $ROW) {
 	$EXISTINGSHOWNAME[] = $ROW['showname'];
 }
-$RESULT1 = implode(", ",addslashesFull($EXISTINGSHOWNAME));
+$RESULT1 = "'".implode("', '",addslashesFull($EXISTINGSHOWNAME))."'";
 
 echo "<br><br><br>Data That is currently in the MYSQL DB:<br><br>";
 echo $RESULT1;
@@ -77,7 +77,7 @@ if (empty($REMOVEDUPS)) {
 	//Build the query your going to use
 	$TVQUERY = "INSERT INTO $TABLE";
 	//Comma separates each value and add single quotes(') around each value
-	$TVQUERY .= " VALUES (NULL,'".implode("'),(NULL,'", $REMOVEDUPS)."') ";
+	$TVQUERY .= " VALUES (NULL,".implode("),(NULL,", $REMOVEDUPS).") ";
 	//Print the query
 	echo $TVQUERY;
 
