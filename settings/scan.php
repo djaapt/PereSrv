@@ -90,7 +90,7 @@ if (empty($REMOVEDUPS)) {
 	$TVQUERYTEST = " VALUES (NULL,".implode("),(NULL,", $TEST2).") ";
 	//Print the query
 	echo $TEST."<br>";
-	echo implode(",",$TEST2)."<br>";
+	echo "TEST2".implode(",",$TEST2)."<br>";
 	echo $TVQUERYTEST."<br><br>";
 	echo $TVQUERY;
 
