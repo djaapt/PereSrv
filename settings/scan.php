@@ -9,11 +9,6 @@ Back To Settings: <a href="settings.php"><span>Settings</span></a><br><br>
 $EXCLUDE_LIST = array(".","..",".htaccess","index.php","fileNice");
 $EXCLUDE_LIST_PRINTABLE = implode(", ", $EXCLUDE_LIST);
 
-//escape out commas in titles
-function clean_up( $TEXT ){
-	$CLEAN = array(",");
-	return str_ireplace($CLEAN, "\,", $TEXT);
-}
 //add the ability to strip slashes from array's and variables not just strings
 function addslashesFull($input)
 {
@@ -27,7 +22,7 @@ function addslashesFull($input)
     } else {
         $input = addslashes($input);
     }
-    return clean_up($input);
+    return $input;
 }
 //Build the connection to SQL server
 include '/media/dbinfo.php';
@@ -40,11 +35,11 @@ $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Databa
 $TVSHOWDIR = "../Seasons/";
 
 //Scans the directory and runs it through the clean-up function we created
-$TVFILES = addslashesFull(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST));
+$TVFILES = "'".addslashesFull(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST))."'";
 
 //This one is just for testing, we won't use it in the final version
 echo "Files in the Directory $TVSHOWDIR not showing the excluded list: $EXCLUDE_LIST_PRINTABLE:<br><br>";
-$TVFILES1 = implode(", ", addslashesFull(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST)));
+$TVFILES1 = implode(", '", addslashesFull(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST)),"'");
 
 //Print results from the test array
 echo "$TVFILES1";
