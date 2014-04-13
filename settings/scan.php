@@ -44,7 +44,7 @@ while($ROW = mysqli_fetch_array($DUPRESULT)) {
 }
 $EXISTINGSHOWNAME = array();
 foreach($ROWS as $ROW) {
-	$EXISTINGSHOWNAME[] = htmlspecialchars($ROW['showname']);
+	$EXISTINGSHOWNAME[] = $ROW['showname'];
 }
 $RESULT1 = implode(", ",$EXISTINGSHOWNAME);
 
@@ -66,7 +66,7 @@ if (empty($REMOVEDUPS)) {
 	//Build the query your going to use
 	$TVQUERY = "INSERT INTO $TABLE";
 	//Comma separates each value and add single quotes(') around each value
-	$TVQUERY .= " VALUES (NULL,'".implode("'),(NULL,'", $REMOVEDUPS)."') ";
+	$TVQUERY .= " VALUES (NULL,'".implode("'),(NULL,'", mysql_real_escape_string($REMOVEDUPS))."') ";
 	//Print the query
 	echo $TVQUERY;
 
