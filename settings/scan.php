@@ -79,20 +79,12 @@ if (empty($REMOVEDUPS)) {
 } else {
 	$DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
 	echo implode(",",$REMOVEDUPS);
-	//$REMOVEDUPS = clean_up(implode(",",$REMOVEDUPS));
-	//$REMOVEDUPS = explode(",", $REMOVEDUPS);
 	echo "<br><br>";
 	//Build the query your going to use
 	$TVQUERY = "INSERT INTO $TABLE";
 	//Comma separates each value and add single quotes(') around each value
 	$TVQUERY .= " VALUES (NULL,".implode("),(NULL,", $REMOVEDUPS).") ";
-	$TEST = clean_up(implode(",",$REMOVEDUPS));
-	$TEST1 = explode(",", $TEST);
-	$TVQUERYTEST = " VALUES (NULL,".implode("),(NULL,", $TEST1).") ";
-	//Print the query
-	//echo $TEST."<br>";
-	//echo "TEST1".implode(",",$TEST1)."<br>";
-	//echo $TVQUERYTEST."<br><br>";
+
 	echo $TVQUERY;
 
 	//Execute your query and print the error message if there is one
