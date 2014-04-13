@@ -26,8 +26,8 @@ function addslashesFull($input)
 }
 //Escape commas
 function clean_up( $TEXT ){
-	$FIND = array(',',);
-	$REPLACE = array(".",);
+	$FIND = array(",","\'.\'");
+	$REPLACE = array(".","','");
 	return str_ireplace($FIND, $REPLACE, $TEXT);
 }
 //Build the connection to SQL server
@@ -86,7 +86,7 @@ if (empty($REMOVEDUPS)) {
 	$TVQUERY .= " VALUES (NULL,".implode("),(NULL,", $REMOVEDUPS).") ";
 	$TEST = clean_up(implode(",",$REMOVEDUPS));
 	$TEST1 = explode(",", $TEST);
-	$TVQUERYTEST = " VALUES (NULL,".implode("),(NULL,", $TEST).") ";
+	$TVQUERYTEST = " VALUES (NULL,".implode("),(NULL,", $TEST1).") ";
 	//Print the query
 	echo $TEST."<br>";
 	echo "TEST1".implode(",",$TEST1)."<br>";
