@@ -8,11 +8,10 @@ Back To Settings: <a href="settings.php"><span>Settings</span></a><br><br>
 //Set files/dirs to exclude from array
 $EXCLUDE_LIST = array(".","..",".htaccess","index.php","fileNice");
 $EXCLUDE_LIST_PRINTABLE = implode(", ", $EXCLUDE_LIST);
-//Unwanted characters in query for later
+
+//Escape out characters we want to keep
 function clean_up( $TEXT ){
-	//Add any other characters to be removed inside the array
-	$FIXAPOSTROPHE = array("'",);
-	return str_ireplace($FIXAPOSTROPHE, "''", $TEXT);
+	return addslashes($TEXT);
 }
 
 //Build the connection to SQL server
