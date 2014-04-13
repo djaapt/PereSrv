@@ -86,7 +86,7 @@ if (empty($REMOVEDUPS)) {
 	$TVQUERY .= " VALUES (NULL,".implode("),(NULL,", $REMOVEDUPS).") ";
 	$TEST = clean_up(implode(",",$REMOVEDUPS));
 	$TEST = array($TEST);
-	$TVQUERYTEST .= " VALUES (NULL,".implode("),(NULL,", $TEST).") ";
+	$TVQUERYTEST = " VALUES (NULL,".implode("),(NULL,", $TEST).") ";
 	//Print the query
 	echo $TEST."<br>";
 	echo $TVQUERYTEST."<br><br>";
