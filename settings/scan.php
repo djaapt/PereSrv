@@ -26,8 +26,8 @@ function addslashesFull($input)
 }
 //Escape commas
 function clean_up( $TEXT ){
-	$FIND = array("o",',');
-	$REPLACE = array("COMMA","WOOT");
+	$FIND = array("o",',',"s");
+	$REPLACE = array("COMMA","WOOT","ss");
 	return str_ireplace($FIND, $REPLACE, $TEXT);
 }
 //Build the connection to SQL server
