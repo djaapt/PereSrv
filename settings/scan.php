@@ -85,8 +85,10 @@ if (empty($REMOVEDUPS)) {
 	//Comma separates each value and add single quotes(') around each value
 	$TVQUERY .= " VALUES (NULL,".implode("),(NULL,", $REMOVEDUPS).") ";
 	$TEST = clean_up(implode(",",$REMOVEDUPS));
+	$TVQUERYTEST .= " VALUES (NULL,".implode("),(NULL,", $TEST).") ";
 	//Print the query
 	echo $TEST."<br>";
+	echo $TVQUERYTEST."<br><br>";
 	echo $TVQUERY;
 
 	//Execute your query and print the error message if there is one
