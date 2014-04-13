@@ -9,9 +9,24 @@ Back To Settings: <a href="settings.php"><span>Settings</span></a><br><br>
 $EXCLUDE_LIST = array(".","..",".htaccess","index.php","fileNice");
 $EXCLUDE_LIST_PRINTABLE = implode(", ", $EXCLUDE_LIST);
 
+//add the ability to strip slashes from array's and variables not just strings
+function addslashesFull($input)
+{
+    if (is_array($input)) {
+        $input = array_map('addslashesFull', $input);
+    } elseif (is_object($input)) {
+        $vars = get_object_vars($input);
+        foreach ($vars as $k=>$v) {
+            $input->{$k} = addslashesFull($v);
+        }
+    } else {
+        $input = addslashes($input);
+    }
+    return $input;
+}
 //Escape out characters we want to keep
 function clean_up( $TEXT ){
-	return addslashes($TEXT);
+	return addslashesFull($TEXT);
 }
 
 //Build the connection to SQL server
