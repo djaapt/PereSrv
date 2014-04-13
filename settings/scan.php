@@ -80,6 +80,7 @@ if (empty($REMOVEDUPS)) {
 	$DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
 	echo implode(",",$REMOVEDUPS);
 	$REMOVEDUPS = clean_up(implode(",",$REMOVEDUPS));
+	$REMOVEDUPS = explode(",", $REMOVEDUPS);
 	echo "<br><br>";
 	//Build the query your going to use
 	$TVQUERY = "INSERT INTO $TABLE";
