@@ -26,7 +26,7 @@ function addslashesFull($input)
 }
 //Escape commas
 function clean_up( $TEXT ){
-	$FIND = array("o","\,");
+	$FIND = array("o",',');
 	$REPLACE = array("COMMA","WOOT");
 	return str_ireplace($FIND, $REPLACE, $TEXT);
 }
