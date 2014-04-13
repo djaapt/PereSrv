@@ -73,14 +73,11 @@ if (empty($REMOVEDUPS)) {
 } else {
 	$DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
 	echo implode(",",$REMOVEDUPS);
-	if (in_array(',',$REMOVEDUPS)) { str_replace(',','\\,',$REMOVEDUPS);
-		echo $REMOVEDUPS;
-	}
 	echo "<br><br>";
 	//Build the query your going to use
 	$TVQUERY = "INSERT INTO $TABLE";
 	//Comma separates each value and add single quotes(') around each value
-	$TVQUERY .= " VALUES (NULL,".implode("),(NULL,", $REMOVEDUPS).") ";
+	$TVQUERY .= " VALUES (NULL,".implode("),(NULL,", str_replace(',','\\,',$REMOVEDUPS)).") ";
 	//Print the query
 	echo $TVQUERY;
 
@@ -104,4 +101,4 @@ else
 ?>
 
 <?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
-include BASEPATH.'/footer.php'; ?>
+include '../footer.php'; ?>
