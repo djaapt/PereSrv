@@ -27,7 +27,7 @@ function addslashesFull($input)
     } else {
         $input = addslashes($input);
     }
-    return cleanup($input);
+    return clean_up($input);
 }
 //Build the connection to SQL server
 include '/media/dbinfo.php';
