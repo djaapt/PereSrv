@@ -84,8 +84,7 @@ if (empty($REMOVEDUPS)) {
 	$TVQUERY = "INSERT INTO $TABLE";
 	//Comma separates each value and add single quotes(') around each value
 	$TVQUERY .= " VALUES (NULL,".implode("),(NULL,", $REMOVEDUPS).") ";
-	$REMOVEDUPS = clean_up($REMOVEDUPS);
-	$TEST = implode("|",$REMOVEDUPS);
+	$TEST = clean_up($TVQUERY);
 	//Print the query
 	echo $TEST."<br>";
 	echo $TVQUERY;
