@@ -3,7 +3,7 @@
 include 'header.php'; ?>
 <div id="info">
 <?php
-echo  '.$_GET["name"].';
+echo  ".$_GET["name"].";
 echo '<video height="340" width="480" controls poster="images/logo.png">';
 echo '<source src="Videos/'.$_GET["name"].'" type="video/webm">';
 echo '</video>';
