@@ -40,8 +40,8 @@ if(isset($_POST['Submit']) && $_POST['Submit']=='Login') {
 }
 ?>
 <head>
-<body bgcolor="#000000" style="position: relative">
-<div style="margin: auto;  position: absolute;  top: 0; left: 0; bottom: 0; right: 0;">
+<body bgcolor="#000000" style="width: 100%">
+<div style="margin: 0 auto">
 <table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#B0B0B0">
 <tr>
 <form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
