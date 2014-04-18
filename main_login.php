@@ -1,4 +1,3 @@
-<head>
 <?php
 if(isset($_POST['Submit']) && $_POST['Submit']=='Login') {
 	//Build the connection to SQL server
@@ -40,14 +39,9 @@ if(isset($_POST['Submit']) && $_POST['Submit']=='Login') {
 	}
 }
 ?>
-<style type="text/css">
- table.center {
-    margin-left: auto;
-    margin-right: auto;
-}
-</head>
+
 <body bgcolor="#000000">
-<table class="center" width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#B0B0B0">
+<table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#B0B0B0">
 <tr>
 <form name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 <td>
