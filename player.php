@@ -3,11 +3,11 @@
 include 'header.php'; ?>
 <div id="info">
 <?php
-$Title = $_GET["name"];
-$Video = preg_replace('/\.[^.]*$/', '', $Title); 
-echo  "<H1>$Video</H1><br>";
+$File = $_GET["name"];
+$Title = preg_replace('/\.[^.]*$/', '', $File); 
+echo  "<H1>$Title</H1><br>";
 echo '<video height="340" width="480" controls poster="images/logo.png">';
-echo '<source src="Videos/'.$Title.'" type="video/webm">';
+echo '<source src="Videos/'.$File.'" type="video/webm">';
 echo '</video>';
 ?> 
 <?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
