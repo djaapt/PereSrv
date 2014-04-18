@@ -1,3 +1,4 @@
+<head>
 <?php
 if(isset($_POST['Submit']) && $_POST['Submit']=='Login') {
 	//Build the connection to SQL server
@@ -39,7 +40,6 @@ if(isset($_POST['Submit']) && $_POST['Submit']=='Login') {
 	}
 }
 ?>
-<head>
 <style type="text/css">
  table.center {
     margin-left: auto;
