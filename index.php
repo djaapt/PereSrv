@@ -27,7 +27,7 @@ if($query_run=mysqli_query($DBC,$query))
 		$Title = preg_replace('/\.[^.]*$/', '', $MOV);
 		$IMAGEPATH = "../movieposters/$Title.jpg";
 		//echo '<td style=padding-top: 5px; padding-bottom: 5px;><a href="'.$PATH.'">'.$MOV.'</a></td>';
-		echo '<td style=padding-top: 5px; padding-bottom: 5px;><a href="'.$PATH.'"><img src="'.$IMAGEPATH.'" title="'.$MOV.'" height=140></a></td>';
+		echo '<td style=padding-top: 5px; padding-bottom: 5px;><a href="player.php?name='.$MOV.'"><img src="'.$IMAGEPATH.'" title="'.$MOV.'" height=140></a></td>';
         $i=$i-1;
     }
 } else {
