@@ -17,8 +17,8 @@ $QUERY = "SELECT moviename FROM $TABLE";
 $GET = mysqli_query($DBC,$QUERY);
 while($ROW = mysqli_fetch_array($GET)){
 $MEDIA = $ROW['moviename'];
-$PATH = "../Videos/".$MEDIA;
-echo '<a href="player.php?name='.$PATH.'">'.$MEDIA.'</a></br>';
+$PATH = "/Videos/".$MEDIA;
+echo '<a href="player.php?name='.$MEDIA.'">'.$MEDIA.'</a></br>';
 }
 
 mysqli_close($DBC);
