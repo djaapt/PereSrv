@@ -39,6 +39,11 @@ if(isset($_POST['Submit']) && $_POST['Submit']=='Login') {
 	}
 }
 ?>
+<head>
+<title>peresrv</title>
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link href="/style.css" rel="stylesheet" type="text/css">
+</head>
 <body bgcolor="#000000">
 <div id="floater">
 <div id="cell">
