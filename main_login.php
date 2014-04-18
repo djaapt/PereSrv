@@ -40,6 +40,7 @@ if(isset($_POST['Submit']) && $_POST['Submit']=='Login') {
 }
 ?>
 <body bgcolor="#000000">
+<div id="floater">
 <div id="cell">
 <table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#B0B0B0">
 <tr>
@@ -70,5 +71,6 @@ if(isset($_POST['Submit']) && $_POST['Submit']=='Login') {
 </form>
 </tr>
 </table>
+</div>
 </div>
 </body>
