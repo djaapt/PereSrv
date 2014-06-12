@@ -30,6 +30,16 @@ Administrator:<select name='Admin'>
 $TABLE = "members";
 $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
 
+function check_input($DATA, $ERROR=''){
+    $DATA = trim($DATA);
+    $DATA = stripslashes($DATA);
+    $DATA = htmlspecialchars($DATA);
+	if ($ERROR && strlen($DATA) == 0){
+		die($ERROR);
+	}
+    return $DATA;
+}
+
 if (isset ($_REQUEST['adding'])) {
 	$ADDING = $_REQUEST['adding'];
 	if ($ADDING == 1) {
@@ -52,15 +62,6 @@ if (isset ($_REQUEST['adding'])) {
 		mysqli_query($DBC,$QUERY);
 		die("User Added to Database");
 	}
-}
-function check_input($DATA, $ERROR=''){
-    $DATA = trim($DATA);
-    $DATA = stripslashes($DATA);
-    $DATA = htmlspecialchars($DATA);
-	if ($ERROR && strlen($DATA) == 0){
-		die($ERROR);
-	}
-    return $DATA;
 }
 ?>
 <?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
