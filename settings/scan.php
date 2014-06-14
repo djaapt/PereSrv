@@ -8,6 +8,8 @@ Back To Settings: <a href="settings.php"><span>Settings</span></a><br><br>
 //Set files/dirs to exclude from array
 $EXCLUDE_LIST = array(".","..",".htaccess","index.php","fileNice");
 $EXCLUDE_LIST_PRINTABLE = implode(", ", $EXCLUDE_LIST);
+$INCLUDE_LIST = array("*.mkv","*.webm");
+$INCLUDE_LIST_PRINTABLE = implode(", ", $INCLUDE_LIST);
 
 //add the ability to strip slashes from array's and variables not just strings
 function addslashesFull($input)
@@ -44,6 +46,9 @@ $TVSHOWDIR = "../Seasons/";
 $TVFILES = "'".clean_up(addslashesFull(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST)))."'";
 
 //This one is just for testing, we won't use it in the final version
+$INCLUDE = "'".implode("', '", clean_up(addslashesFull(array_diff(scandir($TVSHOWDIR),$INCLUDE_LIST))))."'";
+echo "$INCLUDE";
+
 echo "Files in the Directory $TVSHOWDIR not showing the excluded list: $EXCLUDE_LIST_PRINTABLE:<br><br>";
 //We need this part for the final version as it builds our comparison list
 $TVFILES1 = "'".implode("', '", clean_up(addslashesFull(array_diff(scandir($TVSHOWDIR),$EXCLUDE_LIST))))."'";
