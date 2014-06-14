@@ -33,7 +33,7 @@ $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Databa
 if (isset ($_REQUEST['adding'])) {
 	$ADDING = $_REQUEST['adding'];
 	if ($ADDING == 1) {
-		echo "HI";
+		echo "HI you just clicked ADD";
 		//Check for duplicate username
 		$QUERY = "select * from $TABLE where username='" . $_POST['username'] . "'";
 		$RESULT = mysqli_query($DBC,$QUERY);
@@ -52,6 +52,9 @@ if (isset ($_REQUEST['adding'])) {
 		//Add user to DB
 		mysqli_query($DBC,$QUERY);
 		die("User Added to Database");
+	}
+	else {
+		echo "Add did nothing";
 	}
 }
 function check_input($DATA, $ERROR=''){
