@@ -40,6 +40,12 @@ if(isset($_POST['Submit']) && $_POST['Submit']=='Login') {
 }
 ?>
 
+<html>
+<head>
+<title>peresrv</title>
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link href="/style.css" rel="stylesheet" type="text/css">
+</head>
 <body bgcolor="#000000">
 <table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#B0B0B0">
 <tr>
@@ -71,3 +77,4 @@ if(isset($_POST['Submit']) && $_POST['Submit']=='Login') {
 </tr>
 </table>
 </body>
+</html>
