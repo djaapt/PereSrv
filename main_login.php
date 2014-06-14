@@ -64,7 +64,7 @@ if(isset($_POST['Submit']) && $_POST['Submit']=='Login') {
 <td>&nbsp;</td>
 <td><input type="submit" name="Submit" value="Login"></td>
 </tr>
-<tr><?php if($error){ echo "<td colspan='3'>$error</td>"; } ?></tr>
+<tr><?php if(isset($error)){ echo "<td colspan='3'>$error</td>"; } ?></tr>
 </table>
 </td>
 </form>
