@@ -30,8 +30,8 @@ include_once '/media/dbinfo.php';
 $TABLE = "members";
 $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
 
-if (isset ($_REQUEST['adding'])) {
-	$ADDING = $_REQUEST['adding'];
+if (isset ($_POST['Add'])) {
+	$ADDING = $_REQUEST['Add'];
 	if ($ADDING == 1) {
 		echo "HI you just clicked ADD";
 		//Check for duplicate username
