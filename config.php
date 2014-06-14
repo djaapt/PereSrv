@@ -9,5 +9,5 @@ define('BASEPATH', dirname(__FILE__));
 Examples: example.com
 media.test.com
 */
-define('BASEURL', 'https://djaapt.com:8443');
+define('BASEURL', 'http://peresrv.djaapt.com:81');
 ?>
