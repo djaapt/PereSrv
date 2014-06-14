@@ -6,23 +6,23 @@ include_once '/media/dbinfo.php';
 
 <div id="info">
 <form name='New User' method='post' action='settings_users.php?adding=1'>
-<legend>Register New User</legend><br>
-<input type='hidden' name='submitted' id='submitted' value='1'/>
-<label for='FirstName' >First Name*: </label>
-<input type='text' name='FirstName' id='FirstName' maxlength="50" /><br><br>
-<label for='LastName' >Last Name*: </label>
-<input type='text' name='LastName' id='LastName' maxlength="50" /><br><br>
-<label for='username' >UserName*:</label>
-<input type='text' name='username' id='username' maxlength="50" /><br><br>
-<label for='password' >Password*:</label>
-<input type='password' name='password' id='password' maxlength="50" /><br><br>
-<label for='Email' >Email Address*:</label>
-<input type='text' name='Email' id='Email' maxlength="50" /><br><br>
-Administrator:<select name='Admin'> 
-	<option value="DEFAULT" selected>No</option>
-	<option value="1">Yes</option>
-</select><br><br>
-<input type='submit' value='Add' />
+	<legend>Register New User</legend><br>
+	<input type='hidden' name='submitted' id='submitted' value='1'/>
+	<label for='FirstName' >First Name*: </label>
+	<input type='text' name='FirstName' id='FirstName' maxlength="50" /><br><br>
+	<label for='LastName' >Last Name*: </label>
+	<input type='text' name='LastName' id='LastName' maxlength="50" /><br><br>
+	<label for='username' >UserName*:</label>
+	<input type='text' name='username' id='username' maxlength="50" /><br><br>
+	<label for='password' >Password*:</label>
+	<input type='password' name='password' id='password' maxlength="50" /><br><br>
+	<label for='Email' >Email Address*:</label>
+	<input type='text' name='Email' id='Email' maxlength="50" /><br><br>
+		Administrator:<select name='Admin'> 
+		<option value="DEFAULT" selected>No</option>
+		<option value="1">Yes</option>
+	</select><br><br>
+	<input type='submit' value='Add' />
 </form>
 
 <?php
