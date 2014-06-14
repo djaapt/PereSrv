@@ -32,7 +32,7 @@ $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Databa
 
 if (isset ($_POST['submit'])) {
 	$ADDING = $_REQUEST['submit'];
-	if ($ADDING == 1) {
+	if ($ADDING == 'Add') {
 		echo "HI you just clicked ADD";
 		//Check for duplicate username
 		$QUERY = "select * from $TABLE where username='" . $_POST['username'] . "'";
