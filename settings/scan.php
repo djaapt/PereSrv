@@ -47,7 +47,7 @@ $TVFILES = "'".clean_up(addslashesFull(array_diff(scandir($TVSHOWDIR),$EXCLUDE_L
 
 //This one is just for testing, we won't use it in the final version
 $INCLUDE = "'".implode("', '", clean_up(addslashesFull(array_diff(scandir($TVSHOWDIR),$INCLUDE_LIST))))."'";
-echo "$INCLUDE";
+echo "$INCLUDE<br><br>";
 
 echo "Files in the Directory $TVSHOWDIR not showing the excluded list: $EXCLUDE_LIST_PRINTABLE:<br><br>";
 //We need this part for the final version as it builds our comparison list
