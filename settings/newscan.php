@@ -7,13 +7,28 @@ Back To Settings: <a href="settings.php"><span>Settings</span></a><br><br>
 
 <!-- Define what folders have what type of media in them -->
 <?php
+function ListDirFile($DIR){
+    $RFS = scandir($DIR);
+    echo '<ol>';
+    foreach($RFS as $FS){
+        if($FS != '.' && $FS != '..'){
+            echo '<li>'.$FS;
+            if(is_dir($DIR.'/'.$FS)) ListDirFile($DIR.'/'.$FS);
+            echo '</li>';
+        }
+    }
+    echo '</ol>';
+}
+
 $SHOWS = "../Seasons";
 $MOVIES = "../Videos";
 $MUSIC = "../Music";
 
 echo "TV Shows file location: $SHOWS<br>";
 echo "Movies file location: $MOVIES<br>";
-echo "Music file location: $MUSIC";
+echo "Music file location: $MUSIC<br><br>";
+
+listDirFile('$MOVIES');
 ?>
 
 
