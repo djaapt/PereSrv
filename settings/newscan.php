@@ -12,9 +12,9 @@ function ListDirFile($DIR){
     echo '<ol>';
     foreach($RFS as $FS){
         if($FS != '.' && $FS != '..'){
-            //echo '<li>'.$FS;
+            echo '<li>'.$FS;
             if(is_dir($DIR.'/'.$FS)) ListDirFile($DIR.'/'.$FS);
-            //echo '</li>';
+            echo '</li>';
         }
     }
     echo '</ol>';
