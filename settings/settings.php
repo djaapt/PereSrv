@@ -3,6 +3,8 @@
 include_once '../header.php';?>
 
 <div id="info">
+New Scan: <a href="newscan.php">Scan the folders defined below</a><br>
+OLD<br>
 Scan TV Show Folders: <a href="scan.php">SCAN TV Shows</a><br>
 Scan Movie Folders: <a href="moviescan.php">SCAN Movies</a><br>
 Scan Music Folders: <a href="musicscan.php">SCAN Music</a><br><br>
