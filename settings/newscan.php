@@ -10,8 +10,8 @@ Back To Settings: <a href="settings.php"><span>Settings</span></a><br><br>
 $SHOWS = "../Seasons";
 $MOVIES = "../Videos";
 
-echo $SHOWS;
-echo $MOVIES;
+echo "TV Shows file location: $SHOWS<br>";
+echo "Movies file location: $MOVIES";
 ?>
 
 
