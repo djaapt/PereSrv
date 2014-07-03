@@ -13,7 +13,7 @@ $MUSIC = "../Music";
 
 echo "TV Shows file location: $SHOWS<br>";
 echo "Movies file location: $MOVIES<br>";
-echo "Music file location: $Music";
+echo "Music file location: $MUSIC";
 ?>
 
 
