@@ -9,9 +9,11 @@ Back To Settings: <a href="settings.php"><span>Settings</span></a><br><br>
 <?php
 $SHOWS = "../Seasons";
 $MOVIES = "../Videos";
+$MUSIC = "../Music";
 
 echo "TV Shows file location: $SHOWS<br>";
-echo "Movies file location: $MOVIES";
+echo "Movies file location: $MOVIES<br>";
+echo "Music file location: $Music";
 ?>
 
 
