@@ -11,7 +11,7 @@ function ListDirFile($DIR){
     $RFS = scandir($DIR);
     echo '<ol>';
     foreach($RFS as $FS){
-        if($FS != '.' && $FS != '..'){
+        if($FS = '*.webm' && $FS != '.' && $FS != '..'){
             echo '<li>'.$FS;
             if(is_dir($DIR.'/'.$FS)) ListDirFile($DIR.'/'.$FS);
             echo '</li>';
