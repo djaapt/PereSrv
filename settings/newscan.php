@@ -33,7 +33,11 @@ $iterator = new RecursiveIteratorIterator(
     new RecursiveDirectoryIterator($SHOWS),
     RecursiveIteratorIterator::SELF_FIRST
 );
-$files[] = iterator_to_array($iterator);
+foreach ($iterator as $fileObject) {
+    $files[] = $fileObject;
+    // or if you only want the filenames
+    //$files[] = $fileObject->getPathname();
+}
 
 echo $files;
 ?>
