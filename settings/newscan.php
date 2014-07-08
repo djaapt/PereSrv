@@ -28,7 +28,14 @@ echo "TV Shows file location: $SHOWS<br>";
 echo "Movies file location: $MOVIES<br>";
 echo "Music file location: $MUSIC<br><br>";
 
-$TEST = explode(listDirFile("$SHOWS"));
+//$TEST = explode(listDirFile("$SHOWS"));
+$iterator = new RecursiveIteratorIterator(
+    new RecursiveDirectoryIterator($path),
+    RecursiveIteratorIterator::SELF_FIRST
+);
+$files[] = iterator_to_array($iterator);
+
+echo $files;
 ?>
 
 
