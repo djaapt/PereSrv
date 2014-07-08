@@ -39,7 +39,7 @@ foreach ($iterator as $fileObject) {
     //$files[] = $fileObject->getPathname();
 }
 
-echo $files;
+echo implode(",",$files);
 ?>
 
 
