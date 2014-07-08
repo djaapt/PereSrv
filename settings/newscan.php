@@ -36,9 +36,9 @@ $iterator = new RecursiveIteratorIterator(
 foreach ($iterator as $fileObject) {
     $files[] = $fileObject;
     // or if you only want the filenames
-    //$files[] = $fileObject->getPathname();
+    $files1[] = $fileObject->getPathname();
 }
-
+echo implode(",",$files1);
 echo implode(",",$files);
 ?>
 
