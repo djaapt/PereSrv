@@ -64,8 +64,9 @@ width: 100%;
     margin: 20px;
 }
 #botbar{
-position:fixed;
+position:absolute;
 bottom:0;
+width:100%;
 height:30px;
 background:transparent url(images/nav_bg.png) repeat-x top left;
 }
