@@ -2,6 +2,7 @@ body{
 margin: 0;
 background-color: #344152;
 padding-top: 30px;
+height:100%
 }
 #header{
 position:fixed;
