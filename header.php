@@ -1,7 +1,7 @@
 <?php
 // Check if session is not registered, redirect back to main page. 
 // Put this code in first line of web page. 
-include_once 'config.php';
+include 'config.php';
 session_start();
 if(!session_is_registered('USERNAME')){
 header("location: $BASEURL/main_login.php");
