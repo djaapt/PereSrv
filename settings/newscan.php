@@ -7,7 +7,7 @@ Back To Settings: <a href="settings.php"><span>Settings</span></a><br><br>
 
 <!-- Define what folders have what type of media in them -->
 <?php
-function ListDirFile($DIR){
+/*function ListDirFile($DIR){
     $RFS = scandir($DIR);
     echo '<ol>';
     foreach($RFS as $FS){
@@ -18,7 +18,7 @@ function ListDirFile($DIR){
         }
     }
     echo '</ol>';
-}
+}*/
 
 $SHOWS = "../Seasons";
 $MOVIES = "../Videos";
@@ -28,17 +28,40 @@ echo "TV Shows file location: $SHOWS<br>";
 echo "Movies file location: $MOVIES<br>";
 echo "Music file location: $MUSIC<br><br>";
 
-//$TEST = explode(listDirFile("$SHOWS"));
+function getDirContents($dir)
+{
+  $handle = opendir($dir);
+  if ( !$handle ) return array();
+  $contents = array();
+  while ( $entry = readdir($handle) )
+  {
+    if ( $entry=='.' || $entry=='..' ) continue;
+
+    $entry = $dir.DIRECTORY_SEPARATOR.$entry;
+    if ( is_file($entry) )
+    {
+      $contents[] = $entry;
+    }
+    else if ( is_dir($entry) )
+    {
+      $contents = array_merge($contents, getDirContents($entry));
+    }
+  }
+  closedir($handle);
+  return $contents;
+}
+
+/*$TEST = explode(listDirFile("$SHOWS"));
 $iterator = new RecursiveIteratorIterator(
     new RecursiveDirectoryIterator($MOVIES),
-    RecursiveIteratorIterator::SELF_FIRST
+   RecursiveIteratorIterator::SELF_FIRST
 );
 foreach ($iterator as $fileObject) {
     $files[] = $fileObject;
     // or if you only want the filenames
     //$files[] = $fileObject->getPathname();
-}
-
+}*/
+$files = getDirContents($SHOWS);
 echo implode(",",$files);
 ?>
 
