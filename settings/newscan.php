@@ -20,7 +20,7 @@ function ListDirFile($DIR){
     echo '</ol>';
 }
 
-$SHOWS = "../Seasons";
+$SHOWS = "../Seasons/24";
 $MOVIES = "../Videos";
 $MUSIC = "../Music";
 
