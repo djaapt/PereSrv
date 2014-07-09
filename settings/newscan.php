@@ -30,7 +30,7 @@ echo "Music file location: $MUSIC<br><br>";
 
 //$TEST = explode(listDirFile("$SHOWS"));
 $iterator = new RecursiveIteratorIterator(
-    new RecursiveDirectoryIterator($SHOWS),
+    new RecursiveDirectoryIterator($MOVIES),
     RecursiveIteratorIterator::SELF_FIRST
 );
 foreach ($iterator as $fileObject) {
