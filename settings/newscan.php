@@ -20,7 +20,7 @@ Back To Settings: <a href="settings.php"><span>Settings</span></a><br><br>
     echo '</ol>';
 }*/
 
-$SHOWS = "../Seasons";
+$SHOWS = "../Seasons/24";
 $MOVIES = "../Videos";
 $MUSIC = "../Music";
 
@@ -35,7 +35,7 @@ function getDirContents($dir)
   $contents = array();
   while ( $entry = readdir($handle) )
   {
-    if ( $entry=='.' || $entry=='..' ) continue;
+    if ( $entry=='.' || $entry=='..') continue;
 
     $entry = $dir.DIRECTORY_SEPARATOR.$entry;
     if ( is_file($entry) )
