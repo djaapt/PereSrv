@@ -52,6 +52,7 @@ left: 0;
 border: 0;
 height: 100%;
 width: 100%;
+padding-bottom:30px;   /* Height of the footer element */
 }
 .bubble{
     background-color: #c1c1c1;
@@ -63,7 +64,7 @@ width: 100%;
     height: 150px;
     margin: 20px;
 }
-#botbar{
+#footer{
 position:absolute;
 bottom:0;
 width:100%;
