@@ -1,3 +1,4 @@
+<link rel="shortcut icon" href="/images/favicon.ico" />
 <?php
 if(isset($_POST['Submit']) && $_POST['Submit']=='Login') {
 	//Build the connection to SQL server
