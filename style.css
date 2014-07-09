@@ -65,9 +65,10 @@ padding-bottom:30px;   /* Height of the footer element */
     margin: 20px;
 }
 #footer{
-position:absolute;
+position:fixed;
 bottom:0;
 width:100%;
+border:0;
 height:30px;
 background:transparent url(images/nav_bg.png) repeat-x top left;
 }
