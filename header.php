@@ -4,7 +4,7 @@
 include_once 'config.php';
 session_start();
 if(!session_is_registered('USERNAME')){
-header("location:main_login.php");
+header("location: http://peresrv.djaapt.com:81/main_login.php");
 }
 ?>
 <html>
