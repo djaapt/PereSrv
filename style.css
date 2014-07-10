@@ -1,5 +1,6 @@
 body{
-margin: 0;
+margin:0;
+padding:0;
 background-color: #344152;
 height:100%
 }
@@ -47,6 +48,7 @@ height:22px;
 background:transparent url(images/nav_bg.png) 0px -30px no-repeat;
 }
 #info{
+padding:30px;
 padding-bottom:30px;   /* Height of the footer element */
 }
 .bubble{
