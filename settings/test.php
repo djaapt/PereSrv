@@ -6,10 +6,33 @@ include '../header.php'; ?>
 Back To Settings: <a href="settings.php"><span>Settings</span></a><br><br>
 
 <?php
-$FILEEXTTOSCAN = array('mkv','webm','MKV','WEBM');
-$entry = "test.php";
-$test = if ( !in_array(pathinfo($entry,PATHINFO_EXTENSION), $FILEEXTTOSCAN))
-echo $test;
+function getDirContentsShows($dir)
+{
+	$FILEEXTTOSCAN = array('mkv','webm','MKV','WEBM');
+	$DIRSNOTTOSCAN = array('.','..','fileNice');
+	$handle = opendir($dir);
+	if ( !$handle ) return array();
+	$contents = array();
+	while ( $entry = readdir($handle) )
+	{
+		if ( in_array($entry, $DIRSNOTTOSCAN)) continue;
+		if ( !in_array(pathinfo($entry,PATHINFO_EXTENSION), $FILEEXTTOSCAN)) continue;
+		$entry = $dir.DIRECTORY_SEPARATOR.$entry;
+		if ( is_file($entry) )
+		{
+		$contents[] = $entry;
+		}
+		else if ( is_dir($entry) )
+		{
+			$contents = array_merge($contents, getDirContentsShows($entry));
+		}
+	}
+  closedir($handle);
+  return $contents;
+}
+
+$filesshows = getDirContentsShows("test.php");
+echo implode(",",$filesshows);
 ?>
 
 
