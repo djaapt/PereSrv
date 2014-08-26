@@ -14,7 +14,7 @@ echo "TV Shows file location: $SHOWS<br>";
 echo "Movies file location: $MOVIES<br>";
 echo "Music file location: $MUSIC<br><br>";
 
-function getDirContents($dir)
+function getDirContentsShows($dir)
 {
 	$DIRSNOTTOSCAN = array('.','..','fileNice');
 	$handle = opendir($dir);
@@ -31,7 +31,7 @@ function getDirContents($dir)
 		}
 		else if ( is_dir($entry) )
 		{
-			$contents = array_merge($contents, getDirContents($entry));
+			$contents = array_merge($contents, getDirContentsShows($entry));
 		}
 	}
   closedir($handle);
@@ -40,7 +40,7 @@ function getDirContents($dir)
 
 $filesshows = getDirContentsShows($SHOWS);
 echo implode(",",$filesshows);
-function getDirContents($dir)
+function getDirContentsMovies($dir)
 {
 	$DIRSNOTTOSCAN = array('.','..','fileNice');
 	$handle = opendir($dir);
@@ -57,7 +57,7 @@ function getDirContents($dir)
 		}
 		else if ( is_dir($entry) )
 		{
-			$contents = array_merge($contents, getDirContents($entry));
+			$contents = array_merge($contents, getDirContentsMovies($entry));
 		}
 	}
   closedir($handle);
