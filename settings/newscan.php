@@ -38,7 +38,7 @@ function getDirContents($dir)
   return $contents;
 }
 
-$files = getDirContents($SHOWS);
+$files = getDirContents($MOVIES);
 echo implode(",",$files);
 ?>
 
