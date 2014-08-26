@@ -7,7 +7,7 @@ Back To Settings: <a href="settings.php"><span>Settings</span></a><br><br>
 
 <!-- Define what folders have what type of media in them -->
 <?php
-$SHOWS = "../Seasons/24";
+$SHOWS = "../Seasons";
 $MOVIES = "../Videos";
 $MUSIC = "../Music";
 
