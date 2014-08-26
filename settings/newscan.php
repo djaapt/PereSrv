@@ -16,13 +16,13 @@ echo "Music file location: $MUSIC<br><br>";
 
 function getDirContents($dir)
 {
-	$DONOTSCAN = array('.','..','fileNice');
+	$DIRSNOTTOSCAN = array('.','..','fileNice');
 	$handle = opendir($dir);
 	if ( !$handle ) return array();
 	$contents = array();
 	while ( $entry = readdir($handle) )
 	{
-		if ( in_array($entry, $DONOTSCAN)) continue;
+		if ( in_array($entry, $DIRSNOTTOSCAN)) continue;
 
 		$entry = $dir.DIRECTORY_SEPARATOR.$entry;
 		if ( is_file($entry) )
@@ -38,8 +38,34 @@ function getDirContents($dir)
   return $contents;
 }
 
-$files = getDirContents($MOVIES);
-echo implode(",",$files);
+$filesshows = getDirContentsShows($SHOWS);
+echo implode(",",$filesshows);
+function getDirContents($dir)
+{
+	$DIRSNOTTOSCAN = array('.','..','fileNice');
+	$handle = opendir($dir);
+	if ( !$handle ) return array();
+	$contents = array();
+	while ( $entry = readdir($handle) )
+	{
+		if ( in_array($entry, $DIRSNOTTOSCAN)) continue;
+
+		$entry = $dir.DIRECTORY_SEPARATOR.$entry;
+		if ( is_file($entry) )
+		{
+		$contents[] = $entry;
+		}
+		else if ( is_dir($entry) )
+		{
+			$contents = array_merge($contents, getDirContents($entry));
+		}
+	}
+  closedir($handle);
+  return $contents;
+}
+
+$filesmovie = getDirContentsMovies($MOVIES);
+echo implode(",",$filesmovie);
 ?>
 
 
