@@ -10,30 +10,30 @@ Back To Settings: <a href="settings.php"><span>Settings</span></a><br><br>
 $SHOWS = "../Seasons";
 $MOVIES = "../Videos";
 $MUSIC = "../Music";
-$DONOTSCAN = array('.','..','fileNice');
 echo "TV Shows file location: $SHOWS<br>";
 echo "Movies file location: $MOVIES<br>";
 echo "Music file location: $MUSIC<br><br>";
 
 function getDirContents($dir)
 {
-  $handle = opendir($dir);
-  if ( !$handle ) return array();
-  $contents = array();
-  while ( $entry = readdir($handle) )
-  {
-    if ( in_array($entry, $DONOTSCAN)) continue;
+	$DONOTSCAN = array('.','..','fileNice');
+	$handle = opendir($dir);
+	if ( !$handle ) return array();
+	$contents = array();
+	while ( $entry = readdir($handle) )
+	{
+		if ( in_array($entry, $DONOTSCAN)) continue;
 
-    $entry = $dir.DIRECTORY_SEPARATOR.$entry;
-    if ( is_file($entry) )
-    {
-      $contents[] = $entry;
-    }
-    else if ( is_dir($entry) )
-    {
-      $contents = array_merge($contents, getDirContents($entry));
-    }
-  }
+		$entry = $dir.DIRECTORY_SEPARATOR.$entry;
+		if ( is_file($entry) )
+		{
+		$contents[] = $entry;
+		}
+		else if ( is_dir($entry) )
+		{
+			$contents = array_merge($contents, getDirContents($entry));
+		}
+	}
   closedir($handle);
   return $contents;
 }
