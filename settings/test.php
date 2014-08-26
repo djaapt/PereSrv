@@ -32,7 +32,7 @@ function getDirContentsShows($dir)
   return $contents;
 }
 
-$filesshows = getDirContentsShows("test.php");
+$filesshows = getDirContentsShows($TEST);
 echo implode(",",$filesshows);
 ?>
 
