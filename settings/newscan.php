@@ -24,7 +24,7 @@ function getDirContentsShows($dir)
 	while ( $entry = readdir($handle) )
 	{
 		if ( in_array($entry, $DIRSNOTTOSCAN)) continue;
-		if ( !in_array($entry, $FILEEXTTOSCAN)) continue;
+		if ( !in_array(pathinfo($entry,PATHINFO_EXTENSION), $FILEEXTTOSCAN)) continue;
 		$entry = $dir.DIRECTORY_SEPARATOR.$entry;
 		if ( is_file($entry) )
 		{
