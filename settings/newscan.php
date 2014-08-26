@@ -43,6 +43,7 @@ $filesshows = getDirContentsShows($SHOWS);
 echo implode(",",$filesshows);
 function getDirContentsMovies($dir)
 {
+	$FILEEXTTOSCAN = array('mkv','webm','MKV','WEBM');
 	$DIRSNOTTOSCAN = array('.','..','fileNice');
 	$handle = opendir($dir);
 	if ( !$handle ) return array();
@@ -50,15 +51,15 @@ function getDirContentsMovies($dir)
 	while ( $entry = readdir($handle) )
 	{
 		if ( in_array($entry, $DIRSNOTTOSCAN)) continue;
-
 		$entry = $dir.DIRECTORY_SEPARATOR.$entry;
 		if ( is_file($entry) )
 		{
+		if (!in_array(pathinfo($entry,PATHINFO_EXTENSION), $FILEEXTTOSCAN)) continue;
 		$contents[] = $entry;
 		}
 		else if ( is_dir($entry) )
 		{
-			$contents = array_merge($contents, getDirContentsMovies($entry));
+			$contents = array_merge($contents, getDirContentsShows($entry));
 		}
 	}
   closedir($handle);
