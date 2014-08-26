@@ -6,7 +6,7 @@ include '../header.php'; ?>
 Back To Settings: <a href="settings.php"><span>Settings</span></a><br><br>
 
 <?php
-$TEST = "../Seasons/24/Season 01";
+$TEST = "../Seasons/24";
 function getDirContentsShows($dir)
 {
 	$FILEEXTTOSCAN = array('mkv','webm','MKV','WEBM');
@@ -17,7 +17,7 @@ function getDirContentsShows($dir)
 	while ( $entry = readdir($handle) )
 	{
 		if ( in_array($entry, $DIRSNOTTOSCAN)) continue;
-		if ( !in_array(pathinfo($entry,PATHINFO_EXTENSION), $FILEEXTTOSCAN)) continue;
+		if !is_dir(( !in_array(pathinfo($entry,PATHINFO_EXTENSION), $FILEEXTTOSCAN))) continue;
 		$entry = $dir.DIRECTORY_SEPARATOR.$entry;
 		if ( is_file($entry) )
 		{
