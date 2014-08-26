@@ -16,6 +16,7 @@ echo "Music file location: $MUSIC<br><br>";
 
 function getDirContentsShows($dir)
 {
+	$FILEEXTTOSCAN = array('mkv','webm','MKV','WEBM');
 	$DIRSNOTTOSCAN = array('.','..','fileNice');
 	$handle = opendir($dir);
 	if ( !$handle ) return array();
@@ -23,7 +24,7 @@ function getDirContentsShows($dir)
 	while ( $entry = readdir($handle) )
 	{
 		if ( in_array($entry, $DIRSNOTTOSCAN)) continue;
-
+		if ( !in_array($entry, $FILEEXTTOSCAN)) continue;
 		$entry = $dir.DIRECTORY_SEPARATOR.$entry;
 		if ( is_file($entry) )
 		{
