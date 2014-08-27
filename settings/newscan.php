@@ -62,7 +62,7 @@ function getDirContents($dir)
   return $contents;
 }
 
-$filesshows = getDirContents($SHOWS);
+$filesshows = clean_up(addslashes(getDirContents($SHOWS)));
 echo implode(",",$filesshows);
 
 $filesmovie = getDirContents($MOVIES);
