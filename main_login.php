@@ -30,8 +30,8 @@ if(isset($_POST['Submit']) && $_POST['Submit']=='Login') {
 		// Register $USERNAME, $PASSWORD and redirect to file "index.php"
 		session_start();
 		$_SESSION['username'] = $USERNAME;
-		session_register("USERNAME"); 
-		session_register("PASSWORD"); 
+		session_start("USERNAME"); 
+		session_start("PASSWORD"); 
 		header('location:index.php');
 		exit;
 	}
