@@ -1,6 +1,7 @@
 <link rel="shortcut icon" href="/images/favicon.ico" />
 <?php
 include('login_script.php'); // Includes login script
+$error = "<font color=\"#16C9C9\">TESTING</font>";
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,7 +33,7 @@ include('login_script.php'); // Includes login script
 <td>&nbsp;</td>
 <td><input type="submit" name="Submit" value="Login"></td>
 </tr>
-<tr><td colspan='3'><?php echo "TEST"; ?></td></tr>
+<tr><?php echo "<td colspan='3'>$error</td>"; ?></tr>
 </table>
 </td>
 </form>
