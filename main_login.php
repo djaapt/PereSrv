@@ -32,7 +32,7 @@ include('login_script.php'); // Includes login script
 <td>&nbsp;</td>
 <td><input type="submit" name="Submit" value="Login"></td>
 </tr>
-<tr><td colspan='3'><?php echo $error; ?></td></tr>
+<tr><td colspan='3'><?php echo "TEST"; ?></td></tr>
 </table>
 </td>
 </form>
