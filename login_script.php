@@ -2,7 +2,7 @@
 <?php
 include('/media/dbinfo.php');
 session_start(); //Starting Session
-$error=''; //Variable to store error message
+$error="<font color=\"#16C9C9\">Is this showing at all?</font>"; //Variable to store error message
 if (isset($_POST['submit'])) {
 	if (empty($_POST['username']) || empty($_POST['password'])) {
 		$error = "<font color=\"#16C9C9\">Wrong Username or Password</font>";
