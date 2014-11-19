@@ -3,9 +3,9 @@
 include('header.php'); // Includes header
 include('session.php');
 ?>
-
+<div id="info">
 Your Home Page <br><br>
-Welcome : <?php echo $login_session; ?>
+Welcome:<?php echo $login_session; ?>
 
 <?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
 include_once 'footer.php'; ?>
