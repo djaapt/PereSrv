@@ -9,8 +9,6 @@ include('header.php'); ?>
 <tr>
 <?php
 //Build the connection to SQL server
-include '/media/dbinfo.php';
-
 //DB connection variable to call later
 $TABLE = "movies";
 $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
@@ -44,8 +42,6 @@ if($query_run=mysqli_query($DBC,$query))
 <tr>
 <?php
 //Build the connection to SQL server
-include '/media/dbinfo.php';
-
 //DB connection variable to call later
 $TABLE = "tvshow";
 $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
@@ -77,8 +73,6 @@ if($query_run=mysqli_query($DBC,$query))
 <tr>
 <?php
 //Build the connection to SQL server
-include '/media/dbinfo.php';
-
 //DB connection variable to call later
 $TABLE = "music";
 $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');

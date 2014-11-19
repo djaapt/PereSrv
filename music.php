@@ -1,6 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <?php //Include the header - header starts the html and body tags
-include_once 'header.php'; ?>
+include('header.php');
+?>
 
 <div id="info">
 MUSIC<br><br>
