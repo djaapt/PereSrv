@@ -1,7 +1,6 @@
 <?php
 // Check if session is not registered, redirect back to main page. 
 // Put this code in first line of web page. 
-include ('config.php');
 include ('session.php');
 ?>
 <html>
@@ -15,7 +14,6 @@ include ('session.php');
 <div id='cssmenu'>
 <?php
 //Build the connection to SQL server
-include '/media/dbinfo.php';
 //DB connection variable to call later
 $db = new mysqli($HOST,$USER,$PASS,$DBASE);
 if($db->connect_errno > 0){

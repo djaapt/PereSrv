@@ -1,7 +1,6 @@
 <link rel="shortcut icon" href="/images/favicon.ico" />
 <?php
 include('header.php'); // Includes header
-include('session.php');
 ?>
 <div id="info">
 Your Home Page <br><br>

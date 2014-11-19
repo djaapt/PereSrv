@@ -6,8 +6,6 @@ include_once 'header.php'; ?>
 Shows <br><br>
 <?php
 //Build the connection to SQL server
-include '/media/dbinfo.php';
-
 //DB connection variable to call later
 $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
 
