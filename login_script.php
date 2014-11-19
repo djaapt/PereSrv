@@ -5,7 +5,7 @@ session_start(); //Starting Session
 $error=""; //Variable to store error message
 if (isset($_POST['submit'])) {
 	if (empty($_POST['username']) || empty($_POST['password'])) {
-		$error = "<font color=\"#16C9C9\">Wrong Username or Password</font>";
+		$error = "<font color=\"#16C9C9\">Username or Password is blank</font>";
 	}
 	else {
 		//Define $username and $password
