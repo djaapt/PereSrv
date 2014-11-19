@@ -13,6 +13,10 @@ $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Databa
 //Build query to check for duplicates already in the database
 $SHOWQUERY = "SELECT showname FROM $TABLE";
 $GETSHOW = mysqli_query($DBC,$SHOWQUERY);
+if (!$GETSHOW) {
+    printf("Error: %s\n", mysqli_error($DBC));
+    exit();
+}
 while($ROW = mysqli_fetch_array($GETSHOW)){
 $SHOW = $ROW['showname'];
 $SHOWPATH = "Seasons/".$SHOW;
