@@ -64,10 +64,12 @@ function getDirContents($dir)
 
 $filesshows = getDirContents($SHOWS);
 $cleanedshows = clean_up(addslashes($filesshows))
-echo implode(",",$cleanedshows);
+$returnshows = implode(",",$cleanedshows);
+echo $returnshows;
 
 $filesmovie = getDirContents($MOVIES);
-echo implode(",",$filesmovie);
+$returnmovies = implode(",",$filesmovie);
+echo $returnmovies;
 
 //Build the connection to SQL server
 //DB connection variable to call later
