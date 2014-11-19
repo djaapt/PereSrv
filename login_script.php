@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
 		$rows = mysql_num_rows($SQL);
 		if ($rows == 1) {
 			$_SESSION['login_user']=$username; //Initializing Session
-			header('location:index.php'); //Redirecting to main webpage
+			header('location:main_login.php'); //Redirecting to main webpage
 		}
 		else {
 			$error = "<font color=\"#16C9C9\">Wrong Username or Password</font>";
