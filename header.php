@@ -42,6 +42,7 @@ echo '<li><a href="/shows.php"><span>TVShows</span></a></li>';
 echo '<li><a href="/music.php"><span>Music</span></a></li>';
 echo '<li><a href="#"><span>Other</span></a></li>';
 echo '<li><a href="/settings/settings.php"><span>Settings</span></a></li>';
+echo '<li style="float: right;"><a href="profile.php">'.$login_session.'<span></span></a></li>';
 echo '<li style="float: right;"><a href="/logout.php"><span>Logout</span></a></li>';
 echo '</ul>';
 }
@@ -52,6 +53,7 @@ echo '<li><a href="/movies.php"><span>Movies</span></a></li>';
 echo '<li><a href="/shows.php"><span>TVShows</span></a></li>';
 echo '<li><a href="/music.php"><span>Music</span></a></li>';
 echo '<li><a href="#"><span>Other</span></a></li>';
+echo '<li style="float: right;"><a href="profile.php">'.$login_session.'<span></span></a></li>';
 echo '<li style="float: right;"><a href="/logout.php"><span>Logout</span></a></li>';
 echo '</ul>';
 }
