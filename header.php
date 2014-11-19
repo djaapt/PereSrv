@@ -23,7 +23,7 @@ $TABLE = "members";
 $sql = <<<SQL
     SELECT `Admin`
     FROM `$TABLE`
-    WHERE `username` = "$username" 
+    WHERE `username` = "$login_session" 
 SQL;
 
 if(!$result = $db->query($sql)){
