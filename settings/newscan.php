@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML>
 <?php //Include the header - header starts the html and body tags
 include '../header.php'; ?>
 
@@ -70,7 +70,6 @@ $filesmovie = getDirContents($MOVIES);
 echo implode(",",$filesmovie);
 
 //Build the connection to SQL server
-include '/media/dbinfo.php';
 //DB connection variable to call later
 $TABLE = "tvshow";
 $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
@@ -78,4 +77,4 @@ $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Databa
 
 
 <?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
-include '../footer.php'; ?>
+include ('../footer.php'); ?>
