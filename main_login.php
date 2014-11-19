@@ -1,46 +1,8 @@
 <link rel="shortcut icon" href="/images/favicon.ico" />
 <?php
-if(isset($_POST['Submit']) && $_POST['Submit']=='Login') {
-	//Build the connection to SQL server
-	include_once '/media/dbinfo.php';
-	$TABLE = "members"; // Table name 
-
-	// Connect to server and select databse.
-	mysql_connect("$HOST", "$USER", "$PASS")or die("cannot connect"); 
-	mysql_select_db("$DBASE")or die("cannot select DB");
-
-	// username and password sent from form 
-	$USERNAME=$_POST['USERNAME']; 
-	$PASSWORD=$_POST['PASSWORD']; 
-
-	// To protect MySQL injection (more detail about MySQL injection)
-	$USERNAME = stripslashes($USERNAME);
-	$PASSWORD = stripslashes($PASSWORD);
-	$USERNAME = mysql_real_escape_string($USERNAME);
-	$PASSWORD = mysql_real_escape_string($PASSWORD);
-	$PASSWORD = md5($PASSWORD);
-	$SQL="SELECT * FROM $TABLE WHERE username='$USERNAME' and password='$PASSWORD'";
-	$result=mysql_query($SQL);
-
-	// Mysql_num_row is counting table row
-	$count=mysql_num_rows($result);
-
-	// If result matched $USERNAME and $PASSWORD, table row must be 1 row
-	if($count==1){
-		// Register $USERNAME, $PASSWORD and redirect to file "index.php"
-		session_start();
-		$_SESSION['username'] = $USERNAME;
-		session_start("USERNAME"); 
-		session_start("PASSWORD"); 
-		header('location:index.php');
-		exit;
-	}
-	else {
-		$error = "<font color=\"#16C9C9\">Wrong Username or Password</font>";
-	}
-}
+include('login_main.php'); // Includes login script
 ?>
-
+<!DOCTYPE html>
 <html>
 <head>
 <title>peresrv</title>
@@ -58,12 +20,12 @@ if(isset($_POST['Submit']) && $_POST['Submit']=='Login') {
 <tr>
 <td width="78">Username</td>
 <td width="6">:</td>
-<td width="294"><input name="USERNAME" type="text" id="USERNAME"></td>
+<td width="294"><input name="username" type="text" id="username"></td>
 </tr>
 <tr>
 <td>Password</td>
 <td>:</td>
-<td><input name="PASSWORD" type="password" id="PASSWORD"></td>
+<td><input name="password" type="password" id="password"></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
