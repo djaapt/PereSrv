@@ -1,6 +1,6 @@
 <link rel="shortcut icon" href="/images/favicon.ico" />
 <?php
-include('login_main.php'); // Includes login script
+include('login_script.php'); // Includes login script
 ?>
 <!DOCTYPE html>
 <html>
