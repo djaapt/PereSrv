@@ -11,6 +11,7 @@ Shows <br><br>
 $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Database');
 
 //Build query to check for duplicates already in the database
+$TABLE = "tvshow";
 $SHOWQUERY = "SELECT showname FROM $TABLE";
 $GETSHOW = mysqli_query($DBC,$SHOWQUERY);
 if (!$GETSHOW) {
