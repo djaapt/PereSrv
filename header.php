@@ -13,10 +13,6 @@ include ('session.php');
 <body>
 <div id="header">
 <div id='cssmenu'>
-<div id="profile">
-<b id="welcome">Welcome : <i><?php echo $login_session; ?></i></b>
-<b id="logout"><a href="logout.php">Log Out</a></b>
-</div>
 <?php
 //Build the connection to SQL server
 include '/media/dbinfo.php';
