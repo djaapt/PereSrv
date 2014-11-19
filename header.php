@@ -1,9 +1,10 @@
 <?php
 // Check if session is not registered, redirect back to main page. 
 // Put this code in first line of web page. 
-include 'config.php';
-session_start();
-if(!session_is_registered('USERNAME')){
+include ('config.php');
+include ('session.php');
+
+if(!session_is_registered('username')){
 header("location: $BASEURL/main_login.php");
 }
 ?>
@@ -16,6 +17,10 @@ header("location: $BASEURL/main_login.php");
 <body>
 <div id="header">
 <div id='cssmenu'>
+<div id="profile">
+<b id="welcome">Welcome : <i><?php echo $login_session; ?></i></b>
+<b id="logout"><a href="logout.php">Log Out</a></b>
+</div>
 <?php
 //Build the connection to SQL server
 include '/media/dbinfo.php';
