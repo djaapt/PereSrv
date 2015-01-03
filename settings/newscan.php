@@ -67,7 +67,7 @@ $cleanedshows = clean_up(addslashes($filesshows));
 echo implode(",",$cleanedshows);
 
 $filesmovie = getDirContents($MOVIES);
-echo implode(",",$filesmovie);
+//echo implode(",",$filesmovie);
 
 //Build the connection to SQL server
 //DB connection variable to call later
