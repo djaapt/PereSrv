@@ -3,10 +3,9 @@
 include('header.php'); // Includes header
 ?>
 <div id="info">
-Your Home Page <br><br>
+Change your password bellow<br><br>
 Welcome: <?php echo $login_session; ?> <br><br>
 
-<a href="/changepass.php">Change Password</a>
 
 <?php //Include the footer - The footer ends the body and html tags </div> tag ends in footer
 include_once 'footer.php'; ?>
