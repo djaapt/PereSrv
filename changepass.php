@@ -3,7 +3,7 @@
 include('header.php'); // Includes header
 ?>
 <div id="info">
-Change your password below<br><br>
+<br><br>
 Welcome: <?php echo $login_session; ?><br><br>
 
 <div id="info">
@@ -16,7 +16,7 @@ Welcome: <?php echo $login_session; ?><br><br>
 	<input type='newpassword' name='newpassword' id='newpassword' maxlength="50" /><br><br>
 	<label for='username' >Confirm New Password*:</label>
 	<input type='confirmpassword' name='confirmpassword' id='confirmpassword' maxlength="50" /><br><br>
-	<input type='submit' name='submit' value='Add' />
+	<input type='submit' name='submit' value='Change Password' />
 </form>
 
 <?php
