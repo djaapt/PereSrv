@@ -10,9 +10,9 @@ Welcome: <?php echo $login_session; ?><br><br>
 <form name='Password Change' method='post' action='changepass.php?adding=1'>
 	<legend>Change Password Below</legend><br>
 	<input type='hidden' name='submitted' id='submitted' value='1'/>
-	<label for='FirstName' >Current Password*: </label>
+	<label for='CurrentPassword' >Current Password*: </label>
 	<input type='currentpassword' name='currentpassword' id='currentpassword' maxlength="50" /><br><br>
-	<label for='LastName' >New Password*: </label>
+	<label for='NewPassowrd' >New Password*: </label>
 	<input type='newpassword' name='newpassword' id='newpassword' maxlength="50" /><br><br>
 	<label for='username' >Confirm New Password*:</label>
 	<input type='confirmpassword' name='confirmpassword' id='confirmpassword' maxlength="50" /><br><br>
@@ -27,18 +27,9 @@ $DBC = mysqli_connect($HOST,$USER,$PASS,$DBASE) or die ('Unable to select Databa
 if (isset ($_POST['submit'])) {
 	$ADDING = $_REQUEST['submit'];
 	if ($ADDING == 'Add') {
-		//Check for duplicate username
-		$QUERY = "select * from $TABLE where username='" . $_POST['username'] . "'";
-		$RESULT = mysqli_query($DBC,$QUERY);
-		if (mysqli_num_rows($RESULT) >= 1) {	
-			die("Please enter another Username");
-		}
-		$FIRSTNAME = check_input($_POST['FirstName'],"Enter First Name!");
-		$LASTNAME = check_input($_POST['LastName'],"Enter Last Name!");
-		$USERNAME = check_input($_POST['username'],"Enter Username!");
-		$PASSWORD = check_input(md5($_POST['password']),"Enter Password!");
-		$EMAIL = check_input($_POST['Email'],"Enter Email Address!");
-		$ADMIN = $_POST[Admin];
+		$CurrentPassword = check_input(md5(	$_POST['currentpassword']),"Enter Current Password!");
+		$NEWPASSWORD = check_input(md5($_POST['newpassword']),"Enter Password!");
+		$CONFIRMPASSWORD = check_input(md5($_POST['confirmpassword']),"Enter Password!");
 		
 		//Build insert statement
 		$QUERY = "insert into $TABLE values(NULL,'$USERNAME','$PASSWORD','$FIRSTNAME','$LASTNAME','$EMAIL',DEFAULT,DEFAULT,'$ADMIN')";
