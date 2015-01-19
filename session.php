@@ -15,6 +15,6 @@ $row = mysql_fetch_assoc($ses_sql);
 $login_session = $row['username'];
 if(!isset($login_session)){
 	mysql_close($connection); // Closing Connection
-	header("location: $BASEURL/main_login.php"); // Redirecting To Home Page
+	header("location: ".BASEURL."/main_login.php"); // Redirecting To Home Page
 }
 ?>
